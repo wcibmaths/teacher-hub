@@ -114,14 +114,11 @@ a { text-decoration: none; color: inherit; }
 .sb-logo {
   width: 36px; height: 36px;
   border-radius: 9px;
+  background: var(--accent);
+  color: var(--on-dark);
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
   overflow: hidden;
-}
-.sb-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
 }
 
 .sb-name {
@@ -178,6 +175,45 @@ a { text-decoration: none; color: inherit; }
   margin: 10px 0 6px;
 }
 .sb-section-label:first-child { margin-top: 0; }
+
+/* sidebar key dates */
+.sb-kd {
+  margin: 2px 4px 0;
+  background: rgba(255,255,255,.07);
+  border: 1px solid var(--on-dark-line);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+.sb-kd-group {
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+  color: var(--on-dark-dim);
+  margin: 6px 0 3px;
+}
+.sb-kd-group:first-child { margin-top: 0; }
+.sb-kd-item {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  padding: 2px 0;
+}
+.sb-kd-date {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: var(--accent);
+  min-width: 36px;
+  flex-shrink: 0;
+}
+.sb-kd-date-exam { color: #A9C4DE; }
+.sb-kd-txt {
+  font-size: 10.5px;
+  color: var(--on-dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 .sb-link {
   display: flex;
@@ -310,69 +346,35 @@ a { text-decoration: none; color: inherit; }
   gap: 12px;
 }
 
-.feat-card {
-  border-radius: var(--r);
-  padding: 18px 16px 14px;
-  cursor: pointer;
-  transition: transform .18s, border-color .18s;
-  position: relative;
-  overflow: hidden;
+/* Quick Access compact row */
+.qa-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.qa-card {
   display: flex;
-  flex-direction: column;
-  min-height: 110px;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: var(--r);
   border: 1px solid var(--border);
+  transition: transform .18s, border-color .18s;
 }
-.feat-card:hover { transform: translateY(-2px); border-color: var(--teal); }
+.qa-card:hover { transform: translateY(-2px); border-color: var(--teal); }
+.qa-mint { background: var(--mint-bg); color: var(--mint-d); }
+.qa-blue { background: var(--blue-bg); color: var(--blue-d); }
+.qa-icon { line-height: 0; flex-shrink: 0; }
+.qa-text { min-width: 0; flex: 1; }
+.qa-title { font-size: 12.5px; font-weight: 600; color: var(--text); }
+.qa-meta { font-size: 10px; color: var(--mid); margin-top: 1px; }
+.qa-arrow { color: var(--muted); font-size: 13px; transition: color .15s; }
+.qa-card:hover .qa-arrow { color: var(--text); }
 
-.fc-teal    { background: var(--mint-bg);  --fc-accent: var(--mint-d); }
-.fc-orange  { background: var(--mint-bg);  --fc-accent: var(--mint-d); }
-.fc-navy    { background: var(--blue-bg);  --fc-accent: var(--blue-d); }
-.fc-amber   { background: var(--lav-bg);   --fc-accent: var(--lav-d); }
-
-.feat-card::after {
-  content: '';
-  position: absolute;
-  right: -20px; top: -20px;
-  width: 90px; height: 90px;
-  border-radius: 50%;
-  background: rgba(255,255,255,.45);
-  pointer-events: none;
-}
-
-.fc-icon {
-  margin-bottom: 10px;
-  line-height: 0;
-  color: var(--fc-accent);
-}
-.fc-icon svg { stroke: currentColor; }
-
-.fc-title {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text);
-  line-height: 1.3;
-  flex: 1;
-}
-
-.fc-meta {
-  font-size: 10.5px;
-  color: var(--mid);
-  margin-top: 8px;
-  font-weight: 400;
-}
-
-.fc-arrow {
-  position: absolute;
-  bottom: 14px; right: 14px;
-  color: var(--muted);
-  font-size: 14px;
-  transition: color .15s, right .15s;
-}
-.feat-card:hover .fc-arrow { color: var(--text); right: 12px; }
 
 /* Key Dates inline panel */
 .kd-card {
-  grid-column: span 2;
+  grid-column: 1 / -1;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--r);
@@ -890,7 +892,7 @@ a { text-decoration: none; color: inherit; }
 ══════════════════════════════════ */
 @media (max-width: 900px) {
   .sidebar { width: 60px; }
-  .sb-name, .sb-sub, .sb-term, .sb-section-label, .sb-link span, .sb-link-ext, .sb-date { display: none; }
+  .sb-name, .sb-sub, .sb-term, .sb-section-label, .sb-link span, .sb-link-ext, .sb-date, .sb-kd { display: none; }
   .sb-link { justify-content: center; padding: 10px; }
   .body { grid-template-columns: 1fr; padding: 16px; }
   .feat-row { grid-template-columns: repeat(2, 1fr); }
@@ -905,33 +907,31 @@ a { text-decoration: none; color: inherit; }
 <aside class="sidebar">
   <div class="sb-top">
     <div class="sb-brand">
-      <div class="sb-logo"><img src="https://raw.githubusercontent.com/shakirasuwan-source/wcib-maths-hub/main/artifacts/maths-hub/public/wellington-logo.png" alt="Wellington College logo"></div>
+      <div class="sb-logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="11"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="9" y1="16" x2="15" y2="16"/><line x1="9" y1="19" x2="15" y2="19"/><line x1="3" y1="12" x2="21" y2="12" opacity="0"/></svg></div>
       <div>
         <div class="sb-name">WCIB Maths</div>
       </div>
     </div>
     <div class="sb-sub">Department Hub</div>
     <div class="sb-term">
-      <div class="sb-term-label">Michaelmas Term</div>
-      <div class="sb-term-val" id="term-week">Loading…</div>
+      <div class="sb-term-label" id="term-label">Term 1 2026/27</div>
+      <div class="sb-term-val" id="term-week">—</div>
     </div>
   </div>
 
   <nav class="sb-nav">
     <div class="sb-section-label">Navigate</div>
 
-    <a class="sb-link active" href="#">
+    <a class="sb-link active" href="https://wcibmaths.github.io/student-hub/" target="_blank">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
       <span>Student Hub</span>
     </a>
 
-    <a class="sb-link" href="https://shakirasuwan-source.github.io/wcib-maths-sow/" target="_blank">
+    <a class="sb-link" href="https://wcibmaths.github.io/sow/" target="_blank">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
       <span>Scheme of Work</span>
       <span class="sb-link-ext">↗</span>
     </a>
-
-    <div class="sb-section-label">Daily</div>
 
     <a class="sb-link" href="#teach">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
@@ -948,8 +948,6 @@ a { text-decoration: none; color: inherit; }
       <span>Platforms</span>
     </a>
 
-    <div class="sb-section-label">Admin</div>
-
     <a class="sb-link" href="#dept">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
       <span>Department</span>
@@ -959,6 +957,16 @@ a { text-decoration: none; color: inherit; }
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
       <span>Exam Resources</span>
     </a>
+
+    <div class="sb-section-label">Key Dates</div>
+    <div class="sb-kd">
+      <div class="sb-kd-group">Academic</div>
+      <div class="sb-kd-item"><span class="sb-kd-date">24 Aug</span><span class="sb-kd-txt">Term 1 Begins</span></div>
+      <div class="sb-kd-item"><span class="sb-kd-date">TBC</span><span class="sb-kd-txt">Half-Term Break</span></div>
+      <div class="sb-kd-group">External Exams</div>
+      <div class="sb-kd-item"><span class="sb-kd-date sb-kd-date-exam">04 Nov</span><span class="sb-kd-txt">IGCSE Maths A · P1</span></div>
+      <div class="sb-kd-item"><span class="sb-kd-date sb-kd-date-exam">06 Nov</span><span class="sb-kd-txt">IGCSE Maths A · P2</span></div>
+    </div>
   </nav>
 
   <div class="sb-bottom">
@@ -976,7 +984,7 @@ a { text-decoration: none; color: inherit; }
       <div class="tb-sub" id="tb-date">Loading…</div>
     </div>
     <div class="tb-right">
-      <a href="https://shakirasuwan-source.github.io/wcib-maths-hub/" target="_blank">
+      <a href="https://wcibmaths.github.io/student-hub/" target="_blank">
         <button class="tb-btn tb-btn-ghost">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           Student Maths Hub
@@ -995,47 +1003,49 @@ a { text-decoration: none; color: inherit; }
   <div class="body">
     <div class="main">
 
-      <!-- FEAT CARDS -->
+      <!-- QUICK ACCESS -->
+      <div class="qa-row">
+        <a class="qa-card qa-mint" href="https://wcibth.sharepoint.com/sites/Mathematics/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=3uJxar&CID=3f3ed975%2D9341%2D4081%2Dba09%2D4a752fef3d9d&FolderCTID=0x012000D0CF7BB6916D3541A8EDC8E4D61F8DC0&id=%2Fsites%2FMathematics%2FShared%20Documents%2FMaths%20Team%20Hub%2F3%2E%20Assessment" target="_blank">
+          <div class="qa-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+          <div class="qa-text"><div class="qa-title">Assessment Hub</div><div class="qa-meta">Trackers + Schedules</div></div>
+          <span class="qa-arrow">→</span>
+        </a>
+        <a class="qa-card qa-blue" href="https://wcibth.sharepoint.com/sites/Mathematics/Shared%20Documents/Maths%20Team%20Hub?csf=1&web=1&e=XnqkIf&CID=9133bfc3-d8ec-40f4-9779-10db4bf8b727" target="_blank">
+          <div class="qa-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
+          <div class="qa-text"><div class="qa-title">Maths Team Folder</div><div class="qa-meta">SharePoint · All files</div></div>
+          <span class="qa-arrow">→</span>
+        </a>
+      </div>
+
+      <!-- KEY DATES -->
       <div class="feat-row">
-        <a class="feat-card fc-orange" href="https://wcibth.sharepoint.com/sites/Mathematics/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=3uJxar&CID=3f3ed975%2D9341%2D4081%2Dba09%2D4a752fef3d9d&FolderCTID=0x012000D0CF7BB6916D3541A8EDC8E4D61F8DC0&id=%2Fsites%2FMathematics%2FShared%20Documents%2FMaths%20Team%20Hub%2F3%2E%20Assessment" target="_blank">
-          <div class="fc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
-          <div class="fc-title">Assessment Hub</div>
-          <div class="fc-meta">Trackers + Schedules</div>
-          <span class="fc-arrow">→</span>
-        </a>
-        <a class="feat-card fc-navy" href="https://wcibth.sharepoint.com/sites/Mathematics/Shared%20Documents/Maths%20Team%20Hub?csf=1&web=1&e=XnqkIf&CID=9133bfc3-d8ec-40f4-9779-10db4bf8b727" target="_blank">
-          <div class="fc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
-          <div class="fc-title">Maths Team Folder</div>
-          <div class="fc-meta">SharePoint · All files</div>
-          <span class="fc-arrow">→</span>
-        </a>
         <div class="kd-card">
           <div class="kd-head">
             <div class="kd-title-row">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--orange-d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
               <span class="kd-heading">Key Dates</span>
             </div>
-            <span class="kd-sub">Trinity Term 2025/26</span>
+            <span class="kd-sub" id="kd-term">Term 1 2026/27</span>
           </div>
 
           <div class="kd-section">
             <div class="kd-section-label"><span>Academic</span></div>
             <div class="kd-rows">
               <div class="kd-item">
-                <div class="kd-date"><div class="kd-d">22</div><div class="kd-m">May</div></div>
-                <div class="kd-label"><div class="kd-lbl-title">Y11 Mock Results</div><div class="kd-lbl-sub">Data drop · 5pm</div></div>
+                <div class="kd-date"><div class="kd-d">24</div><div class="kd-m">Aug</div></div>
+                <div class="kd-label"><div class="kd-lbl-title">Term 1 Begins</div><div class="kd-lbl-sub">First day · 2026/27</div></div>
               </div>
               <div class="kd-item">
-                <div class="kd-date"><div class="kd-d">28</div><div class="kd-m">May</div></div>
-                <div class="kd-label"><div class="kd-lbl-title">Half-Term Break</div><div class="kd-lbl-sub">Returns 08 Jun</div></div>
+                <div class="kd-date"><div class="kd-d">—</div><div class="kd-m">TBC</div></div>
+                <div class="kd-label"><div class="kd-lbl-title">Half-Term Break</div><div class="kd-lbl-sub">Awaiting school calendar</div></div>
               </div>
               <div class="kd-item">
-                <div class="kd-date"><div class="kd-d">19</div><div class="kd-m">Jun</div></div>
-                <div class="kd-label"><div class="kd-lbl-title">Y10 CAT4 Window</div><div class="kd-lbl-sub">All classes</div></div>
+                <div class="kd-date"><div class="kd-d">—</div><div class="kd-m">TBC</div></div>
+                <div class="kd-label"><div class="kd-lbl-title">Data Drop 1</div><div class="kd-lbl-sub">Awaiting school calendar</div></div>
               </div>
               <div class="kd-item">
-                <div class="kd-date"><div class="kd-d">03</div><div class="kd-m">Jul</div></div>
-                <div class="kd-label"><div class="kd-lbl-title">Reports Deadline</div><div class="kd-lbl-sub">Y7–Y10 · 12pm</div></div>
+                <div class="kd-date"><div class="kd-d">—</div><div class="kd-m">TBC</div></div>
+                <div class="kd-label"><div class="kd-lbl-title">Reports Deadline</div><div class="kd-lbl-sub">Awaiting school calendar</div></div>
               </div>
             </div>
           </div>
@@ -1047,12 +1057,20 @@ a { text-decoration: none; color: inherit; }
             </div>
             <div class="kd-rows kd-rows-exam">
               <div class="kd-item">
-                <div class="kd-date kd-date-exam"><div class="kd-d">03</div><div class="kd-m">Jun</div></div>
-                <div class="kd-label"><div class="kd-lbl-title">Mathematics A · Paper 2H<span class="kd-tag">IGCSE</span></div><div class="kd-lbl-sub">Wed · Morning · 2h · 4MA1/2H</div></div>
+                <div class="kd-date kd-date-exam"><div class="kd-d">30</div><div class="kd-m">Oct</div></div>
+                <div class="kd-label"><div class="kd-lbl-title">Further Pure Maths · Paper 1<span class="kd-tag">IGCSE</span></div><div class="kd-lbl-sub">Fri · Morning · 2h · 4PM1/01</div></div>
               </div>
               <div class="kd-item">
-                <div class="kd-date kd-date-exam"><div class="kd-d">—</div><div class="kd-m">Jun</div></div>
-                <div class="kd-label"><div class="kd-lbl-title">IAL Maths · P1–P4, S1–S3, M1–M2, D1<span class="kd-tag">IAL</span></div><div class="kd-lbl-sub"><a class="kd-link" href="https://qualifications.pearson.com/en/support/support-topics/exams/exam-timetables.html" target="_blank">View dates on Pearson →</a></div></div>
+                <div class="kd-date kd-date-exam"><div class="kd-d">04</div><div class="kd-m">Nov</div></div>
+                <div class="kd-label"><div class="kd-lbl-title">Mathematics A · Paper 1F/1H<span class="kd-tag">IGCSE</span></div><div class="kd-lbl-sub">Wed · Morning · 2h · 4MA1</div></div>
+              </div>
+              <div class="kd-item">
+                <div class="kd-date kd-date-exam"><div class="kd-d">06</div><div class="kd-m">Nov</div></div>
+                <div class="kd-label"><div class="kd-lbl-title">Mathematics A · Paper 2F/2H<span class="kd-tag">IGCSE</span></div><div class="kd-lbl-sub">Fri · Morning · 2h · 4MA1</div></div>
+              </div>
+              <div class="kd-item">
+                <div class="kd-date kd-date-exam"><div class="kd-d">—</div><div class="kd-m">Jan</div></div>
+                <div class="kd-label"><div class="kd-lbl-title">IAL Maths · January 2027 series<span class="kd-tag">IAL</span></div><div class="kd-lbl-sub"><a class="kd-link" href="https://qualifications.pearson.com/en/support/support-topics/exams/exam-timetables.html" target="_blank">View dates on Pearson →</a></div></div>
               </div>
             </div>
           </div>
@@ -1060,7 +1078,7 @@ a { text-decoration: none; color: inherit; }
       </div>
 
       <!-- SCHEME OF WORK FULL CARD -->
-      <a class="sow-card" href="https://shakirasuwan-source.github.io/wcib-maths-sow/" target="_blank">
+      <a class="sow-card" href="https://wcibmaths.github.io/sow/" target="_blank">
         <div class="sow-left">
           <div class="sow-eyebrow">Live · 2026/27</div>
           <div class="sow-title">WCIB Maths — Scheme of Work</div>
@@ -1230,11 +1248,26 @@ const dateStr = now.toLocaleDateString('en-GB', { weekday:'long', day:'numeric',
 document.getElementById('tb-date').textContent = dateStr;
 document.getElementById('sb-date').textContent = dateStr;
 
-// Term week
-const termStart = new Date(now.getFullYear(), 8, 1);
-const diff = Math.max(0, now - termStart);
-const wk = Math.min(Math.ceil(diff / (7 * 24 * 60 * 60 * 1000)) || 1, 14);
-document.getElementById('term-week').textContent = 'Week ' + wk + ' of 14';
+// Term config — update these each year
+const TERM_1_START_DATE = "2026-08-24";
+const TERM_1_WEEKS = 14;
+const TERM_1_LABEL = "Term 1 2026/27";
+
+// Term week (dynamic, time-based)
+const termStart = new Date(TERM_1_START_DATE + "T00:00:00");
+const msPerWeek = 7 * 24 * 60 * 60 * 1000;
+let termVal;
+if (now < termStart) {
+  const daysToGo = Math.ceil((termStart - now) / (24 * 60 * 60 * 1000));
+  termVal = 'Starts in ' + daysToGo + ' day' + (daysToGo === 1 ? '' : 's');
+} else {
+  const wk = Math.min(Math.floor((now - termStart) / msPerWeek) + 1, TERM_1_WEEKS);
+  termVal = 'Week ' + wk + ' of ' + TERM_1_WEEKS;
+}
+document.getElementById('term-label').textContent = TERM_1_LABEL;
+document.getElementById('term-week').textContent = termVal;
+const kdTerm = document.getElementById('kd-term');
+if (kdTerm) kdTerm.textContent = TERM_1_LABEL;
 
 // Teaching tabs
 function switchTab(btn, panelId) {
