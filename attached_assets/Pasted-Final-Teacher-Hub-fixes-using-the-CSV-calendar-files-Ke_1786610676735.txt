@@ -1,0 +1,133 @@
+Final Teacher Hub fixes using the CSV calendar files.
+
+Keep the current fonts, colours, layout, and visual design.
+Do not redesign the page.
+Do not change private SharePoint links.
+Make small targeted fixes only.
+
+CSV files already uploaded:
+public/data/wcib_academic_key_dates_2026_27.csv
+public/data/wcib_term_weeks_2026_27.csv
+
+Also use:
+allocations.html
+
+1. Fix the left sidebar term/week box
+
+The sidebar currently shows:
+Term 1 2026/27
+—
+
+Do not show “—”.
+
+Use public/data/wcib_term_weeks_2026_27.csv as the only source for term/week logic.
+
+Today is before the first teaching week, so it should show:
+Term 1 2026/27
+Starts soon
+
+Once the date falls inside a listed week, show:
+Term 1 2026/27
+Week X of 14
+M1A · Cycle A
+
+Do not leave this area as “—”, “Loading…”, or “TBC”.
+
+2. Fix the left sidebar Key Dates
+
+The sidebar Key Dates currently shows TBC placeholders.
+Remove all TBC placeholder dates.
+
+Use public/data/wcib_academic_key_dates_2026_27.csv as the only source for Academic Key Dates.
+
+Show:
+- dates from today onward only
+- sorted by start_date ascending
+- next 4 to 6 important dates only
+- no past dates
+- no TBC placeholders
+
+The Academic Key Dates section should include school events such as:
+- INSET
+- Family Orientation
+- Welcome Day
+- CAT4 testing
+- PTCs
+- holidays
+- reporting deadlines
+- mock exams
+- internal assessments
+- data/report deadlines
+
+3. Keep Upcoming External Exams separate
+
+Do not use the school academic CSV for Pearson external exams.
+
+In the left sidebar, keep an Upcoming External Exams section with:
+Text:
+External exam dates follow Pearson official timetables.
+
+Button/link:
+View Pearson Exam Timetables
+
+URL:
+https://qualifications.pearson.com/en/support/support-topics/exams/exam-timetables.html#tab-Internationalcentres
+
+Do not add Pearson dates into wcib_academic_key_dates_2026_27.csv.
+
+4. Fix top greeting date
+
+The top greeting currently shows “Loading…”.
+Fix this so it shows today’s date properly.
+
+Example:
+Thursday, 13 August 2026
+
+Do not leave visible “Loading…” text anywhere.
+
+5. Add Teaching Allocation page to Department tab
+
+Add a new first item under the right panel Department tab.
+
+Label:
+Teaching Allocation & Responsibilities
+
+Link:
+allocations.html
+
+Place it before:
+Maths Dept Handbook
+
+The file allocations.html should be in the repo root, beside index.html.
+
+Final URL should be:
+https://wcibmaths.github.io/teacher-hub/allocations.html
+
+6. Use GitHub Pages-safe paths
+
+For CSV fetch paths, use relative paths that work under /teacher-hub/.
+
+Use:
+data/wcib_academic_key_dates_2026_27.csv
+data/wcib_term_weeks_2026_27.csv
+
+Do not use:
+/data/wcib_academic_key_dates_2026_27.csv
+/data/wcib_term_weeks_2026_27.csv
+
+7. Final checks
+
+Check that:
+- no sidebar date shows TBC
+- no sidebar term/week line shows —
+- no Loading… text remains
+- Academic Key Dates come from wcib_academic_key_dates_2026_27.csv
+- term/week display comes from wcib_term_weeks_2026_27.csv
+- Upcoming External Exams shows the Pearson official timetable link
+- Teaching Allocation & Responsibilities appears first under Department
+- allocations.html opens correctly
+- Student Hub still links to https://wcibmaths.github.io/student-hub/
+- Scheme of Work still links to https://wcibmaths.github.io/sow/
+- Assessment Hub and Maths Team Folder links remain unchanged
+
+Show me the diff before committing.
