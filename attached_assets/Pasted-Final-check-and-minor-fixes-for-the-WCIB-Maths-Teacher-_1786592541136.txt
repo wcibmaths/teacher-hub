@@ -1,0 +1,100 @@
+Final check and minor fixes for the WCIB Maths Teacher Hub.
+
+Important:
+Keep the current layout, fonts, colours, and general design.
+Do not redesign the page.
+Do not change the resource cards or data logic unless needed for the fixes below.
+Make small targeted changes only.
+
+1. Replace the school logo
+Remove the current Wellington College logo from the header/sidebar.
+Replace it with a generic maths logo or simple generic icon.
+It must not visually associate the page with the school crest or official school branding.
+Keep the same size and spacing as the current logo.
+
+2. Check the term/week box logic
+Inspect the left panel box that currently shows:
+“Michaelmas Term”
+“Week 1 of 14” or “Loading…”
+
+Make this dynamic and time-based.
+It should update automatically based on the current date.
+
+For the 2026/27 school year:
+- The term should start as Term 1 2026/27 from the school start date in August 2026.
+- Replace “Michaelmas Term” with “Term 1 2026/27”.
+- Show the correct week number once the term starts.
+- Before the term starts, show “Term 1 2026/27” and “Starts soon” or a countdown-style label.
+- Do not leave it as “Loading…”.
+
+Use a simple configurable constant near the top of the script, such as:
+TERM_1_START_DATE = "2026-08-24"
+TERM_1_WEEKS = 14
+
+If the actual start date is already defined elsewhere, use the existing date source instead of duplicating it.
+
+3. Update Student Hub links
+Update every Student Hub / Student Maths Hub link to:
+https://wcibmaths.github.io/student-hub/
+
+This includes:
+- left panel Student Hub
+- top button Student Maths Hub
+- any other student hub link in the page
+
+4. Update Scheme of Work links
+Update every Scheme of Work / Open SoW link to:
+https://wcibmaths.github.io/sow/
+
+This includes:
+- left panel Scheme of Work
+- main Scheme of Work feature card
+- Open SoW button
+- any other SoW link in the page
+
+5. Replace left panel Daily/Admin sections with Key Dates
+Remove the “Daily” and “Admin” headings from the left panel.
+Remove the empty-looking navigation grouping created by those headings.
+
+In that space, add a compact Key Dates panel in the left sidebar.
+Use the same style and structure as the current Key Dates card, but smaller and sidebar-friendly.
+
+The sidebar Key Dates panel should include two sections:
+A. Academic Key Dates
+B. Upcoming External Exams
+
+Keep it clean and readable.
+Use only the next few upcoming items, not a long list.
+Do not make the sidebar too crowded.
+
+6. Update Key Dates term label
+Replace “Trinity Term 2025/26” with a dynamic time-based term label.
+From August 2026, it should show:
+“Term 1 2026/27”
+
+This should update from the same date/term logic as the left panel.
+
+7. Move Assessment Hub and Maths Team Folder
+Move “Assessment Hub” and “Maths Team Folder” out of the middle top card row if this improves teacher access and reduces scrolling.
+
+Place them somewhere more useful, such as:
+- a small “Quick Access” section near the top right, or
+- a compact row above Teaching Resources, or
+- inside the right panel above Assessment & Data
+
+Keep both links easy to find without scrolling.
+Do not remove them.
+Keep the existing SharePoint URLs unchanged.
+
+8. Link check
+After making changes, check that:
+- Student Hub links go to https://wcibmaths.github.io/student-hub/
+- Scheme of Work links go to https://wcibmaths.github.io/sow/
+- Pearson external timetable link is still present
+- Assessment Hub SharePoint link is still present
+- Maths Team Folder SharePoint link is still present
+- Teaching resource links remain unchanged
+
+Do not change private SharePoint links unless they are broken in the current code.
+
+Show me the diff before committing.
