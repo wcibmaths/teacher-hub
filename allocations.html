@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Teaching &amp; Responsibilities 2026/27 · WCIB Maths</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:         #F4EFE7;
+  --surface:    #FFFFFF;
+  --panel-soft: #FBF8F4;
+  --border:     #E2DDD7;
+  --border-2:   #EFEAE2;
+
+  --text:       #2F3640;
+  --mid:        #4F5762;
+  --muted:      #6C7480;
+
+  --sidebar-bg:     #3E4655;
+  --accent:         #DBA39D;
+  --on-dark:        #FFFFFF;
+  --on-dark-muted:  rgba(255,255,255,.85);
+  --on-dark-line:   rgba(255,255,255,.16);
+  --navy:           #3E4655;
+  --navy-2:         #2F3641;
+
+  --mint:    #C9E4D4; --mint-bg: #E2F1E8; --mint-d:  #5A9B7F;
+  --blue:    #A8BFD1; --blue-bg: #D9E4ED; --blue-d:  #3D5872;
+  --blush:   #DBA39D; --blush-bg:#F0DDD9; --blush-d: #B47267;
+  --lav:     #B39EB5; --lav-bg:  #E3DBE5; --lav-d:   #8A7194;
+  --sand:    #E0C4A0; --sand-bg: #F3E6D6; --sand-d:  #A97C4A;
+  --sage:    #C5CCB5; --sage-bg: #E7EADF; --sage-d:  #6E7A5C;
+
+  --teal: var(--mint); --teal-d: var(--mint-d); --teal-bg: var(--mint-bg);
+  --orange: var(--blush); --orange-d: var(--blush-d); --orange-bg: var(--blush-bg);
+
+  --f: 'Poppins', system-ui, sans-serif;
+  --r: 12px;
+  --r-sm: 8px;
+}
+
+/* teacher colour families */
+.t-SSW { --tc: var(--blush); --tc-bg: var(--blush-bg); --tc-d: var(--blush-d); }
+.t-ADE { --tc: var(--blue);  --tc-bg: var(--blue-bg);  --tc-d: var(--blue-d); }
+.t-FTA { --tc: var(--mint);  --tc-bg: var(--mint-bg);  --tc-d: var(--mint-d); }
+.t-MKM { --tc: var(--lav);   --tc-bg: var(--lav-bg);   --tc-d: var(--lav-d); }
+.t-HPA { --tc: var(--sand);  --tc-bg: var(--sand-bg);  --tc-d: var(--sand-d); }
+.t-XLN { --tc: var(--sage);  --tc-bg: var(--sage-bg);  --tc-d: var(--sage-d); }
+
+html { font-size: 13.5px; }
+body {
+  font-family: var(--f);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; color: inherit; }
+
+/* ══════════ SIDEBAR ══════════ */
+.sidebar {
+  width: 210px; min-height: 100vh;
+  background: var(--sidebar-bg); color: var(--on-dark);
+  display: flex; flex-direction: column; flex-shrink: 0;
+  position: sticky; top: 0; height: 100vh; overflow-y: auto;
+}
+.sb-top { padding: 24px 20px 20px; border-bottom: 1px solid var(--on-dark-line); }
+.sb-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
+.sb-logo {
+  width: 36px; height: 36px; border-radius: 9px;
+  background: var(--accent); color: var(--on-dark);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.sb-name { font-size: 13px; font-weight: 600; line-height: 1.25; letter-spacing: .01em; }
+.sb-sub { font-size: 10.5px; color: var(--on-dark-muted); letter-spacing: .02em; padding-left: 2px; margin-top: 2px; }
+
+.sb-back {
+  display: flex; align-items: center; gap: 7px;
+  margin-top: 14px; padding: 7px 10px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid var(--on-dark-line);
+  border-radius: 7px;
+  font-size: 11px; font-weight: 500; color: var(--on-dark-muted);
+  transition: background .15s;
+}
+.sb-back:hover { background: rgba(255,255,255,.15); color: var(--on-dark); }
+
+.sb-nav { padding: 16px 12px; flex: 1; }
+.sb-section-label {
+  font-size: 9.5px; font-weight: 600; letter-spacing: .12em;
+  text-transform: uppercase; color: rgba(255,255,255,.5);
+  padding: 0 8px 8px;
+}
+.sb-link {
+  display: block; padding: 7px 10px; border-radius: 7px;
+  font-size: 11.5px; font-weight: 400; color: var(--on-dark-muted);
+  transition: background .12s, color .12s;
+}
+.sb-link:hover { background: rgba(255,255,255,.08); color: var(--on-dark); }
+.sb-link.on { background: rgba(255,255,255,.14); color: var(--on-dark); font-weight: 500; }
+
+.sb-stats { padding: 14px 20px; border-top: 1px solid var(--on-dark-line); }
+.sb-stat { display: flex; justify-content: space-between; font-size: 10.5px; color: var(--on-dark-muted); padding: 3px 0; }
+.sb-stat b { color: var(--on-dark); font-weight: 600; }
+
+/* ══════════ WRAPPER ══════════ */
+.wrapper { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+
+.topbar {
+  background: var(--surface); border-bottom: 1px solid var(--border);
+  padding: 0 28px; min-height: 56px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  position: sticky; top: 0; z-index: 100;
+}
+.tb-greeting { font-size: 16px; font-weight: 600; }
+.tb-sub { font-size: 11.5px; color: var(--muted); margin-top: 1px; }
+.tb-right { display: flex; align-items: center; gap: 10px; }
+.tb-btn {
+  display: flex; align-items: center; gap: 7px;
+  padding: 8px 16px; border-radius: 8px;
+  font-size: 12.5px; font-weight: 600; font-family: var(--f);
+  cursor: pointer; border: none; transition: all .15s;
+}
+.tb-btn-ghost { background: var(--border-2); color: var(--mid); }
+.tb-btn-ghost:hover { background: var(--border); }
+.tb-btn-primary { background: var(--navy); color: var(--on-dark); }
+.tb-btn-primary:hover { background: var(--navy-2); }
+
+.body {
+  flex: 1; display: grid; grid-template-columns: 1fr 272px;
+  gap: 20px; padding: 22px 28px 60px 22px; align-items: start;
+}
+.main { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+.right { display: flex; flex-direction: column; gap: 16px; position: sticky; top: 78px; }
+
+/* ══════════ SECTION HEADS ══════════ */
+.sec-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; gap: 12px; flex-wrap: wrap; }
+.sec-title { font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+.sec-sub { font-size: 10.5px; color: var(--muted); font-weight: 400; }
+
+/* ══════════ PICKER ══════════ */
+.picker-card {
+  background: var(--navy); border-radius: var(--r);
+  padding: 18px 22px 20px; position: relative; overflow: hidden;
+}
+.picker-card::before {
+  content: ''; position: absolute; right: -60px; top: -70px;
+  width: 220px; height: 220px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(219,163,157,.30) 0%, transparent 65%);
+  pointer-events: none;
+}
+.pk-eyebrow {
+  font-size: 9.5px; font-weight: 600; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 5px;
+}
+.pk-title { font-size: 18px; font-weight: 700; color: var(--on-dark); line-height: 1.2; }
+.pk-desc { font-size: 11.5px; color: rgba(255,255,255,.65); font-weight: 300; margin-top: 5px; }
+.pk-chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; position: relative; }
+.pk-chip {
+  display: flex; align-items: center; gap: 7px;
+  padding: 7px 13px 7px 9px; border-radius: 20px;
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18);
+  color: rgba(255,255,255,.78); font-family: var(--f);
+  font-size: 11.5px; font-weight: 500; cursor: pointer;
+  transition: all .15s;
+}
+.pk-chip:hover { background: rgba(255,255,255,.16); color: #fff; }
+.pk-chip .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--tc, #fff); flex-shrink: 0; }
+.pk-chip.on { background: #fff; color: var(--navy-2); border-color: #fff; font-weight: 600; }
+.pk-chip-all { padding-left: 13px; }
+
+/* ══════════ TEACHER SUMMARY ══════════ */
+.who-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-left: 4px solid var(--tc, var(--border));
+  border-radius: var(--r); padding: 18px 20px;
+}
+.who-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.who-name { font-size: 16px; font-weight: 600; }
+.who-role { font-size: 11px; color: var(--muted); margin-top: 2px; }
+.who-load { text-align: right; min-width: 150px; }
+.who-load-n { font-size: 20px; font-weight: 700; line-height: 1; }
+.who-load-n span { font-size: 11px; font-weight: 500; color: var(--muted); }
+.who-cols { display: grid; grid-template-columns: 1.25fr 1fr; gap: 18px; margin-top: 16px; }
+.who-h {
+  font-size: 9.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 8px;
+}
+.cl-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 7px 10px; border-radius: var(--r-sm);
+  background: var(--panel-soft); border: 1px solid var(--border-2);
+  margin-bottom: 5px;
+}
+.cl-yr { font-size: 11px; font-weight: 600; min-width: 62px; flex-shrink: 0; }
+.cl-set { font-size: 11px; color: var(--mid); flex: 1; min-width: 0; }
+.cl-h { font-size: 10.5px; font-weight: 600; color: var(--tc-d, var(--mid)); flex-shrink: 0; }
+.cl-note { font-size: 9.5px; color: var(--muted); font-style: italic; }
+.rp-row {
+  display: flex; gap: 8px; padding: 6px 0;
+  border-bottom: 1px dashed var(--border-2); font-size: 11.5px; color: var(--mid);
+}
+.rp-row:last-child { border-bottom: none; }
+.rp-tag {
+  font-size: 9px; font-weight: 600; letter-spacing: .04em;
+  padding: 2px 6px; border-radius: 4px; height: fit-content;
+  background: var(--tc-bg, var(--border-2)); color: var(--tc-d, var(--mid));
+  flex-shrink: 0; min-width: 74px; text-align: center;
+}
+.who-empty { font-size: 11.5px; color: var(--muted); font-style: italic; padding: 4px 0; }
+
+/* ══════════ ALLOCATION GRID ══════════ */
+.panel-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; }
+.panel-head {
+  padding: 14px 16px 12px; border-bottom: 1px solid var(--border-2);
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+}
+.panel-title { font-size: 12.5px; font-weight: 600; display: flex; align-items: center; gap: 7px; }
+.panel-sub { font-size: 10px; color: var(--muted); font-weight: 400; }
+
+.tbl-wrap { overflow-x: auto; }
+table.g { width: 100%; border-collapse: collapse; font-size: 11.5px; min-width: 620px; }
+table.g th {
+  font-size: 9.5px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--muted); text-align: left; padding: 10px 12px;
+  border-bottom: 1px solid var(--border-2); background: var(--panel-soft); white-space: nowrap;
+}
+table.g td { padding: 8px 12px; border-bottom: 1px solid var(--border-2); vertical-align: middle; }
+table.g tr:last-child td { border-bottom: none; }
+table.g td.yr { font-weight: 600; white-space: nowrap; }
+table.g td.sub { color: var(--muted); font-size: 10.5px; }
+
+.cell {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 5px 10px 5px 8px; border-radius: 7px;
+  background: var(--tc-bg); border: 1px solid transparent;
+  transition: opacity .18s, border-color .18s;
+}
+.cell .ini { font-size: 11px; font-weight: 600; color: var(--tc-d); }
+.cell .nm  { font-size: 10px; color: var(--mid); }
+.cell.pill-plain { background: var(--border-2); }
+
+.tagline {
+  display: inline-block; font-size: 9px; font-weight: 600; letter-spacing: .05em;
+  padding: 2px 6px; border-radius: 4px; margin-left: 6px;
+  background: var(--blush-bg); color: var(--blush-d);
+}
+.tagline.acc { background: var(--lav-bg); color: var(--lav-d); }
+.tagline.join { background: var(--blue-bg); color: var(--blue-d); }
+
+/* dimming when a teacher is selected */
+body.filtering .cell:not(.hit) { opacity: .22; }
+body.filtering .cell.hit { border-color: var(--tc); }
+body.filtering tr.row-hit td { background: var(--panel-soft); }
+
+/* ══════════ WORKLOAD TABLE ══════════ */
+/* ══════════ TABS ══════════ */
+.tabs {
+  display: flex; gap: 4px; background: var(--border-2);
+  padding: 4px; border-radius: 10px; margin-bottom: 14px; width: fit-content; flex-wrap: wrap;
+}
+.tab {
+  padding: 6px 14px; border-radius: 7px; font-size: 12px; font-weight: 500;
+  color: var(--mid); cursor: pointer; border: none; background: none;
+  font-family: var(--f); transition: all .15s;
+}
+.tab.active { background: var(--surface); color: var(--text); box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+.tabp { display: none; }
+.tabp.active { display: block; }
+
+/* ══════════ FLAGS ══════════ */
+/* ══════════ RIGHT PANEL ══════════ */
+.ask-row {
+  display: flex; align-items: center; gap: 9px;
+  padding: 7px 14px; transition: background .12s; cursor: default;
+}
+.ask-row:hover { background: var(--bg); }
+.ask-ini {
+  width: 30px; height: 24px; border-radius: 6px; flex-shrink: 0;
+  background: var(--tc-bg); color: var(--tc-d);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 600;
+}
+.ask-lbl { font-size: 11px; line-height: 1.3; flex: 1; }
+.ll-group {
+  font-size: 9.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--muted); padding: 12px 14px 4px;
+}
+.num-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 12px; }
+.num-tile {
+  border: 1.5px solid var(--border); background: var(--bg);
+  border-radius: 9px; padding: 9px 6px; text-align: center;
+}
+.num-n { font-size: 15px; font-weight: 700; }
+.num-l { font-size: 9.5px; color: var(--muted); margin-top: 1px; }
+.ref-row {
+  display: flex; justify-content: space-between; gap: 8px;
+  padding: 7px 14px; font-size: 11px; border-bottom: 1px solid var(--border-2);
+}
+.ref-row:last-child { border-bottom: none; }
+.ref-row span { color: var(--muted); }
+.ref-row b { font-weight: 600; white-space: nowrap; }
+
+/* ══════════ ANIMATION ══════════ */
+@keyframes up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.topbar { animation: up .3s ease both; }
+.main > *:nth-child(1) { animation: up .35s .05s ease both; }
+.main > *:nth-child(2) { animation: up .35s .08s ease both; }
+.main > *:nth-child(3) { animation: up .35s .11s ease both; }
+.right > * { animation: up .35s .07s ease both; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+/* ══════════ RESPONSIVE ══════════ */
+@media (max-width: 1100px) { .who-cols { grid-template-columns: 1fr; } }
+@media (max-width: 900px) {
+  .sidebar { width: 60px; }
+  .sb-name, .sb-sub, .sb-nav, .sb-stats, .sb-back span { display: none; }
+  .sb-back { justify-content: center; padding: 7px; }
+  .body { grid-template-columns: 1fr; padding: 16px; }
+  .right { position: static; }
+  .topbar { padding: 10px 16px; flex-wrap: wrap; }
+}
+
+/* ══════════ PRINT ══════════ */
+@media print {
+  .sidebar, .tb-right, .pk-chips, .tabs { display: none !important; }
+  body { display: block; background: #fff; }
+  .body { grid-template-columns: 1fr; padding: 0; }
+  .right { position: static; }
+  .panel-card, .who-card { break-inside: avoid; border: 1px solid #ccc; }
+  .tabp { display: block !important; }
+  body.filtering .cell:not(.hit) { opacity: 1; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════ SIDEBAR ══════════ -->
+<aside class="sidebar">
+  <div class="sb-top">
+    <div class="sb-brand">
+      <div class="sb-logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="11"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="9" y1="16" x2="15" y2="16"/><line x1="9" y1="19" x2="15" y2="19"/></svg></div>
+      <div><div class="sb-name">WCIB Maths</div></div>
+    </div>
+    <div class="sb-sub">Teaching &amp; Responsibilities</div>
+    <a class="sb-back" href="index.html">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      <span>Back to Hub</span>
+    </a>
+  </div>
+
+  <nav class="sb-nav">
+    <div class="sb-section-label">On this page</div>
+    <a class="sb-link" href="#classes">Who teaches what</a>
+    <a class="sb-link" href="#sixth">Sixth form</a>
+    <a class="sb-link" href="#roles">Roles &amp; responsibilities</a>
+    <a class="sb-link" href="#assess">Assessment leads</a>
+    <a class="sb-link" href="#comps">Competitions &amp; prep</a>
+  </nav>
+
+  <div class="sb-stats">
+    <div class="sb-stat"><span>Students</span><b>431</b></div>
+    <div class="sb-stat"><span>Teachers</span><b>6</b></div>
+    <div class="sb-stat"><span>Sets per year</span><b>4</b></div>
+  </div>
+</aside>
+
+<!-- ══════════ WRAPPER ══════════ -->
+<div class="wrapper">
+
+  <div class="topbar">
+    <div>
+      <div class="tb-greeting">Teaching &amp; Responsibilities 2026/27</div>
+      <div class="tb-sub" id="tb-sub">Pick your initials to see just your classes</div>
+    </div>
+    <div class="tb-right">
+      <button class="tb-btn tb-btn-ghost" onclick="window.print()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Print
+      </button>
+      <a href="index.html"><button class="tb-btn tb-btn-primary">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Department Hub
+      </button></a>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="main">
+
+      <!-- PICKER -->
+      <div class="picker-card">
+        <div class="pk-eyebrow">2026/27 · Term 1</div>
+        <div class="pk-title">Who teaches what</div>
+        <div class="pk-desc">Choose your initials and the whole page narrows to your classes, hours and responsibilities.</div>
+        <div class="pk-chips" id="chips"></div>
+      </div>
+
+      <!-- TEACHER SUMMARY -->
+      <div id="whoWrap"></div>
+
+      <!-- CLASSES -->
+      <div id="classes">
+        <div class="sec-head">
+          <div class="sec-title">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
+            Year 7 to Year 11
+          </div>
+          <span class="sec-sub">Four banded sets per year · Ma1 is the top band</span>
+        </div>
+        <div class="panel-card">
+          <div class="tbl-wrap">
+            <table class="g" id="ksTable">
+              <thead>
+                <tr>
+                  <th>Year</th><th>Ma1</th><th>Ma2</th><th>Ma3</th><th>Ma4</th>
+                  <th>Hrs/wk</th><th>Cohort</th><th>Assessment lead</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIXTH FORM -->
+      <div id="sixth">
+        <div class="sec-head">
+          <div class="sec-title">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            Sixth Form
+          </div>
+          <span class="sec-sub">Split by exam unit</span>
+        </div>
+        <div class="panel-card">
+          <div class="tbl-wrap">
+            <table class="g" id="sixTable">
+              <thead>
+                <tr><th>Group</th><th>Units</th><th>Teacher</th><th>Hrs/wk</th><th>Notes</th></tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROLES -->
+      <div id="roles">
+        <div class="sec-head">
+          <div class="sec-title">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            Roles &amp; responsibilities
+          </div>
+        </div>
+        <div class="panel-card"><div id="rolesBody"></div></div>
+      </div>
+
+      <!-- ASSESSMENT -->
+      <div id="assess">
+        <div class="sec-head">
+          <div class="sec-title">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--sand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            Assessment leads
+          </div>
+          <span class="sec-sub">Who writes and moderates each paper</span>
+        </div>
+        <div class="tabs">
+          <button class="tab active" onclick="swap(this,'as-year')">Whole year group</button>
+          <button class="tab" onclick="swap(this,'as-acc')">Accelerated &amp; further</button>
+          <button class="tab" onclick="swap(this,'as-al')">A-level units</button>
+        </div>
+        <div class="tabp active" id="as-year"><div class="panel-card"><div class="tbl-wrap"><table class="g" id="asYear"><thead><tr><th>Year</th><th>Lead</th><th>Set taught</th><th>Notes</th></tr></thead><tbody></tbody></table></div></div></div>
+        <div class="tabp" id="as-acc"><div class="panel-card"><div class="tbl-wrap"><table class="g" id="asAcc"><thead><tr><th>Year</th><th>Lead</th><th>Set taught</th><th>Notes</th></tr></thead><tbody></tbody></table></div></div></div>
+        <div class="tabp" id="as-al"><div class="panel-card"><div class="tbl-wrap"><table class="g" id="asAl"><thead><tr><th>Group</th><th>Units</th><th>Lead</th><th>Notes</th></tr></thead><tbody></tbody></table></div></div></div>
+      </div>
+
+      <!-- COMPETITIONS & PREP -->
+      <div id="comps">
+        <div class="sec-head">
+          <div class="sec-title">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--lav)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+            Competitions, prep platforms &amp; enrichment
+          </div>
+        </div>
+        <div class="panel-card"><div id="compsBody"></div></div>
+      </div>
+
+    </div><!-- /main -->
+
+    <!-- RIGHT PANEL -->
+    <div class="right">
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <div class="panel-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            Who to ask
+          </div>
+        </div>
+        <div id="askBody"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <div class="panel-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            Cohort sizes
+          </div>
+          <span class="panel-sub">431 total</span>
+        </div>
+        <div class="num-grid" id="numBody"></div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <div class="panel-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--sand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Hours per class
+          </div>
+        </div>
+        <div style="padding:6px 0">
+          <div class="ref-row"><span>Year 7 to 9</span><b>3.5 / wk · 7 per cycle</b></div>
+          <div class="ref-row"><span>Year 10 &amp; 11</span><b>3.0 / wk · 6 per cycle</b></div>
+          <div class="ref-row"><span>Y12/13 Maths</span><b>5.5 / wk</b></div>
+          <div class="ref-row"><span>Y12/13 Further</span><b>10 / wk</b></div>
+          <div class="ref-row"><span>Pure block</span><b>4.0 / wk</b></div>
+          <div class="ref-row"><span>Applied unit</span><b>1.5 / wk</b></div>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <div class="panel-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--lav)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Good to know
+          </div>
+        </div>
+        <div style="padding:10px 14px 12px;font-size:11px;color:var(--mid);line-height:1.55">
+          The timetable runs on a two-week cycle, so a 3.5 hour class is 7 periods per cycle. Y9 Ma1 runs the accelerated scheme, and Y10 and Y11 Ma1 sit the further maths pathway alongside 4MA1.
+        </div>
+      </div>
+
+    </div><!-- /right -->
+  </div><!-- /body -->
+</div><!-- /wrapper -->
+
+<script>
+/* ════════ DATA ════════ */
+const T = {
+  SSW: { role:'Head of Mathematics' },
+  ADE: { role:'KS4 curriculum coordinator' },
+  FTA: { role:'KS3 curriculum coordinator' },
+  MKM: { role:'Competitions lead' },
+  HPA: { role:'Sparx lead · Y8 & Y10 assessment' },
+  XLN: { role:'SLT · deputy head' }
+};
+const ORDER = ['SSW','ADE','FTA','MKM','HPA','XLN'];
+
+const KS = [
+  { yr:'Year 7',  h:3.5, n:82, lead:'ADE', sets:{ Ma1:'MKM', Ma2:'HPA', Ma3:'ADE', Ma4:'FTA' } },
+  { yr:'Year 8',  h:3.5, n:61, lead:'HPA', sets:{ Ma1:'ADE', Ma2:'MKM', Ma3:'FTA', Ma4:'HPA' } },
+  { yr:'Year 9',  h:3.5, n:78, lead:'SSW', sets:{ Ma1:'FTA', Ma2:'HPA', Ma3:'MKM', Ma4:'SSW' } },
+  { yr:'Year 10', h:3.0, n:71, lead:'HPA', sets:{ Ma1:'SSW', Ma2:'ADE', Ma3:'HPA', Ma4:'FTA' } },
+  { yr:'Year 11', h:3.0, n:55, lead:'FTA', sets:{ Ma1:'SSW', Ma2:'FTA', Ma3:'ADE', Ma4:'MKM' } }
+];
+
+const SIX = [
+  { g:'Y12 Maths · Group 1', u:'P1, P2',   t:'SSW', h:4.0, note:'' },
+  { g:'Y12 Maths · Group 1', u:'S1',       t:'SSW', h:1.5, note:'' },
+  { g:'Y12 Maths · Group 2', u:'P1, P2',   t:'FTA', h:4.0, note:'' },
+  { g:'Y12 Maths · Group 2', u:'S1',       t:'ADE', h:1.5, note:'' },
+  { g:'Y12 Further Maths',   u:'P1 to P4', t:'MKM', h:7.0, note:'' },
+  { g:'Y12 Further Maths',   u:'S1',       t:'SSW', h:0,   note:'Joins the Y12 Maths Group 1 S1 lesson', join:true },
+  { g:'Y12 Further Maths',   u:'M1',       t:'XLN', h:1.5, note:'' },
+  { g:'Y13 Maths',           u:'P3, P4',   t:'ADE', h:2.0, note:'Co-taught with SSW' },
+  { g:'Y13 Maths',           u:'P3, P4',   t:'SSW', h:2.0, note:'Co-taught with ADE' },
+  { g:'Y13 Maths',           u:'D1',       t:'XLN', h:1.5, note:'' },
+  { g:'Y13 Maths',           u:'M1',       t:'ADE', h:1.5, note:'' },
+  { g:'Y13 Further Maths',   u:'FP1, FP2', t:'HPA', h:5.5, note:'' },
+  { g:'Y13 Further Maths',   u:'S2, S3',   t:'SSW', h:1.5, note:'' },
+  { g:'Y13 Further Maths',   u:'M2',       t:'XLN', h:1.5, note:'' },
+  { g:'Y13 Further Maths',   u:'D1',       t:'XLN', h:0,   note:'Joins the Y13 Maths D1 lesson', join:true }
+];
+
+const ROLES = {
+  SSW:[['Curriculum','KS5 curriculum coordinator'],
+       ['Assessment','Y9 whole year group lead'],
+       ['Assessment','Y11 Ma1 further path lead'],
+       ['Exam Qs','Y12 Maths & FM Stats S1'],
+       ['Exam Qs','Y13 FM Stats S2, S3'],
+       ['Teaching','Y13 Maths P3, P4 co-taught with ADE']],
+  FTA:[['Curriculum','KS3 curriculum coordinator'],
+       ['Assessment','Y11 whole year group lead'],
+       ['Assessment','Y9 Ma1 accelerated path lead'],
+       ['Exam Qs','Y12 Maths P1, P2'],
+       ['Transition','Y6 to Y7 coordinator, feeder primaries, baselines, Y7 induction']],
+  ADE:[['Curriculum','KS4 curriculum coordinator'],
+       ['Assessment','Y7 whole year group lead'],
+       ['Assessment','Y8 Ma1 accelerated path lead'],
+       ['Exam Qs','Y13 Maths P3, P4'],
+       ['Platform','Dr Frost lead, Y10 to Y13']],
+  MKM:[['Exam Qs','Y12 FM Pure P1 to P4'],
+       ['Competitions','Full ownership: entries, deadlines, UKMT liaison, results, certificates'],
+       ['Competitions','Student selection, parent notifications, problem-solving training, maths club']],
+  HPA:[['Assessment','Y8 whole year group lead'],
+       ['Assessment','Y10 whole year group lead'],
+       ['Exam Qs','Y13 FM Further Pure FP1, FP2'],
+       ['Platform','Sparx Maths lead, Y7 to Y9'],
+       ['Enrichment','Display and enrichment boards']],
+  XLN:[['Teaching','Y12 FM M1, Y13 D1, Y13 FM M2'],
+       ['Exam Qs','Y13 Maths D1 and Y12 FM M1']]
+};
+
+const AS_YEAR = [
+  ['Year 7','ADE','Ma3','All sets sit the same paper'],
+  ['Year 8','HPA','Ma4','Standard paper, Ma1 sits a separate accelerated paper'],
+  ['Year 9','SSW','Ma4','Standard paper, Ma1 sits a separate accelerated paper'],
+  ['Year 10','HPA','Ma3','Standard paper'],
+  ['Year 11','FTA','Ma2','Standard paper']
+];
+const AS_ACC = [
+  ['Year 7','—','N/A','Y7 is unified, no separate Ma1 paper needed'],
+  ['Year 8','ADE','Ma1','Separate accelerated assessment'],
+  ['Year 9','FTA','Ma1','Separate accelerated assessment'],
+  ['Year 10','SSW','Ma1','Further maths pathway'],
+  ['Year 11','SSW','Ma1','Further maths pathway']
+];
+const AS_AL = [
+  ['Y12 Maths','P1, P2','FTA',''],
+  ['Y12 Maths','S1','SSW',''],
+  ['Y13 Maths','P3, P4','ADE','Co-taught with SSW'],
+  ['Y13 Maths','D1','XLN',''],
+  ['Y13 Maths','M1','ADE',''],
+  ['Y12 FM','P1 to P4','MKM',''],
+  ['Y12 FM','M1','XLN',''],
+  ['Y13 FM','FP1, FP2','HPA',''],
+  ['Y13 FM','S2, S3','SSW',''],
+  ['Y13 FM','D1, M2','XLN','D1 is taught with Y13 Maths']
+];
+
+const COMPS = [
+  ['Competitions · logistics','MKM','Entries and registrations · deadlines and calendar · UKMT and external liaison · results tracking · certificates and awards'],
+  ['Competitions · pupils','MKM','Student selection and communication · parent notifications · problem-solving training · maths club · celebrating and displaying results'],
+  ['Sparx Maths, Y7 to Y9','HPA','Monitor weekly assignment consistency and chase non-setters'],
+  ['Dr Frost, Y10 to Y13','ADE','Monitor task-setting consistency and alignment to the scheme of work'],
+  ['Y6 to Y7 transition','FTA','Liaise with feeder primaries, baseline assessments, Y7 induction'],
+  ['Display and enrichment','HPA','Corridor displays, puzzle of the week, celebrating competition results']
+];
+
+const ASK = [
+  ['Group','Curriculum'],
+  ['FTA','KS3 curriculum'],['ADE','KS4 curriculum'],['SSW','KS5 curriculum'],
+  ['Group','Assessment leads'],
+  ['ADE','Year 7'],['HPA','Year 8'],['SSW','Year 9'],['HPA','Year 10'],['FTA','Year 11'],
+  ['Group','Platforms & enrichment'],
+  ['HPA','Sparx Maths, Y7 to 9'],['ADE','Dr Frost, Y10 to 13'],
+  ['MKM','Competitions and UKMT'],['FTA','Y6 to Y7 transition'],['HPA','Displays and boards']
+];
+
+const NUMS = [['Y7',82],['Y8',61],['Y9',78],['Y10',71],['Y11',55],['Y12',59],['Y13',25]];
+
+/* ════════ RENDER ════════ */
+const el = id => document.getElementById(id);
+const cell = (ini, extra='') =>
+  `<span class="cell t-${ini}" data-t="${ini}"><span class="ini">${ini}</span></span>${extra}`;
+
+/* chips */
+el('chips').innerHTML =
+  `<button class="pk-chip pk-chip-all on" data-pick="ALL">Whole department</button>` +
+  ORDER.map(i => `<button class="pk-chip t-${i}" data-pick="${i}"><span class="dot"></span>${i}</button>`).join('');
+
+/* KS3/KS4 table */
+el('ksTable').querySelector('tbody').innerHTML = KS.map(r => {
+  const c = s => `<td>${cell(r.sets[s])}</td>`;
+  return `<tr>
+    <td class="yr">${r.yr}</td>
+    ${c('Ma1')}${c('Ma2')}${c('Ma3')}${c('Ma4')}
+    <td class="sub">${r.h.toFixed(1)}</td>
+    <td class="sub">${r.n}</td>
+    <td>${cell(r.lead)}</td>
+  </tr>`;
+}).join('');
+
+/* sixth form table */
+el('sixTable').querySelector('tbody').innerHTML = SIX.map(r => `
+  <tr>
+    <td class="yr">${r.g}</td>
+    <td>${r.u}${r.join?'<span class="tagline join">Joint</span>':''}</td>
+    <td>${cell(r.t)}</td>
+    <td class="sub">${r.h ? r.h.toFixed(1) : '—'}</td>
+    <td class="sub">${r.note}</td>
+  </tr>`).join('');
+
+/* roles */
+el('rolesBody').innerHTML = ORDER.map(i => `
+  <div class="t-${i}" data-block="${i}" style="padding:12px 16px;border-bottom:1px solid var(--border-2)">
+    <div style="margin-bottom:8px">${cell(i)}<span style="font-size:10.5px;color:var(--muted);margin-left:8px">${T[i].role}</span></div>
+    ${ROLES[i].map(r => `<div class="rp-row"><span class="rp-tag">${r[0]}</span><span>${r[1]}</span></div>`).join('')}
+  </div>`).join('');
+
+/* assessment tables */
+const fill = (id, rows, teacherCol) => {
+  el(id).querySelector('tbody').innerHTML = rows.map(r => `<tr>${
+    r.map((v,ix) => ix === teacherCol
+      ? `<td>${T[v] ? cell(v) : '<span class="sub">—</span>'}</td>`
+      : `<td class="${ix===0?'yr':'sub'}">${v}</td>`).join('')
+  }</tr>`).join('');
+};
+fill('asYear', AS_YEAR, 1);
+fill('asAcc',  AS_ACC,  1);
+fill('asAl',   AS_AL,   2);
+
+/* competitions */
+el('compsBody').innerHTML = COMPS.map(r => `
+  <div style="display:flex;gap:12px;padding:11px 16px;border-bottom:1px solid var(--border-2);align-items:flex-start">
+    <div style="min-width:150px;font-size:11.5px;font-weight:600">${r[0]}</div>
+    <div style="flex-shrink:0">${cell(r[1])}</div>
+    <div style="font-size:11px;color:var(--mid);line-height:1.5">${r[2]}</div>
+  </div>`).join('');
+
+/* who to ask */
+el('askBody').innerHTML = ASK.map(r => r[0] === 'Group'
+  ? `<div class="ll-group">${r[1]}</div>`
+  : `<div class="ask-row t-${r[0]}"><span class="ask-ini">${r[0]}</span><span class="ask-lbl">${r[1]}</span></div>`
+).join('') + '<div style="height:8px"></div>';
+
+/* cohort numbers */
+el('numBody').innerHTML = NUMS.map(n =>
+  `<div class="num-tile"><div class="num-n">${n[1]}</div><div class="num-l">${n[0]}</div></div>`).join('');
+
+/* ════════ TEACHER PANEL ════════ */
+function myClasses(i) {
+  const out = [];
+  KS.forEach(r => Object.keys(r.sets).forEach(s => {
+    if (r.sets[s] === i) out.push({ yr: r.yr, set: s, h: r.h, note: '' });
+  }));
+  SIX.filter(r => r.t === i).forEach(r =>
+    out.push({ yr: r.g.replace('Y12','Y12').replace('Y13','Y13'), set: r.u, h: r.h, note: r.note }));
+  return out;
+}
+
+function renderWho(i) {
+  if (i === 'ALL') { el('whoWrap').innerHTML = ''; return; }
+  const t = T[i], cl = myClasses(i);
+  const hrs = cl.reduce((a, c) => a + c.h, 0);
+  const leads = ROLES[i] || [];
+  el('whoWrap').innerHTML = `
+    <div class="who-card t-${i}">
+      <div class="who-top">
+        <div>
+          <div class="who-name">${i}</div>
+          <div class="who-role">${t.role}</div>
+        </div>
+        <div class="who-load">
+          <div class="who-load-n">${hrs.toFixed(1)} <span>hrs / week</span></div>
+        </div>
+      </div>
+      <div class="who-cols">
+        <div>
+          <div class="who-h">Classes · ${cl.length}</div>
+          ${cl.map(c => `<div class="cl-row">
+            <span class="cl-yr">${c.yr}</span>
+            <span class="cl-set">${c.set}${c.note?` <span class="cl-note">· ${c.note}</span>`:''}</span>
+            <span class="cl-h">${c.h ? c.h.toFixed(1) : 'joint'}</span>
+          </div>`).join('')}
+        </div>
+        <div>
+          <div class="who-h">Responsibilities</div>
+          ${leads.length ? leads.map(r => `<div class="rp-row"><span class="rp-tag">${r[0]}</span><span>${r[1]}</span></div>`).join('')
+                         : '<div class="who-empty">No additional responsibilities listed.</div>'}
+        </div>
+      </div>
+    </div>`;
+}
+
+/* ════════ FILTER ════════ */
+let pick = 'ALL';
+function applyFilter(i) {
+  pick = i;
+  document.querySelectorAll('.pk-chip').forEach(c => c.classList.toggle('on', c.dataset.pick === i));
+  document.body.classList.toggle('filtering', i !== 'ALL');
+  document.querySelectorAll('.cell').forEach(c => c.classList.toggle('hit', c.dataset.t === i));
+  document.querySelectorAll('tr').forEach(tr => {
+    tr.classList.toggle('row-hit', i !== 'ALL' && !!tr.querySelector('.cell.hit'));
+  });
+  document.querySelectorAll('[data-block]').forEach(b => {
+    b.style.display = (i === 'ALL' || b.dataset.block === i) ? '' : 'none';
+  });
+  el('tb-sub').textContent = i === 'ALL'
+    ? 'Pick your initials to see just your classes'
+    : `Showing ${i} · ${myClasses(i).length} classes · ${myClasses(i).reduce((a,c)=>a+c.h,0).toFixed(1)} hours a week`;
+  renderWho(i);
+}
+document.getElementById('chips').addEventListener('click', e => {
+  const b = e.target.closest('.pk-chip');
+  if (b) applyFilter(b.dataset.pick);
+});
+
+/* tabs */
+function swap(btn, id) {
+  btn.parentElement.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#assess .tabp').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+/* scroll spy */
+const links = [...document.querySelectorAll('.sb-link')];
+const obs = new IntersectionObserver(es => {
+  es.forEach(e => {
+    if (e.isIntersecting) {
+      links.forEach(l => l.classList.toggle('on', l.getAttribute('href') === '#' + e.target.id));
+    }
+  });
+}, { rootMargin: '-70px 0px -70% 0px' });
+['classes','sixth','roles','assess','comps'].forEach(id => {
+  const n = document.getElementById(id); if (n) obs.observe(n);
+});
+
+applyFilter('ALL');
+</script>
+</body>
+</html>
