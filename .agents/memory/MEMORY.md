@@ -1,0 +1,1 @@
+- [WCIB calendar CSV quirks](csv-calendar-data.md) — CSVs carry a UTF-8 BOM; terms have unequal week counts with half-term gaps; use relative fetch paths for GitHub Pages.
