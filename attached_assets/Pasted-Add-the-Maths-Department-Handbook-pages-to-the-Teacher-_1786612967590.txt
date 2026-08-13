@@ -1,0 +1,68 @@
+Add the Maths Department Handbook pages to the Teacher Hub.
+
+Keep the current Teacher Hub fonts, colours, layout, and links.
+Do not redesign the Teacher Hub.
+Make small targeted changes only.
+
+Files to add to the repo root, beside index.html:
+- handbook.html
+- handbook-vision.html
+- handbook-staff.html
+- handbook-curriculum.html
+- handbook-assessment.html
+- handbook-prep.html
+- handbook-exams.html
+- handbook.css
+
+These files should stay in the repo root so their internal links work:
+handbook.html
+handbook-vision.html
+handbook-staff.html
+handbook-curriculum.html
+handbook-assessment.html
+handbook-prep.html
+handbook-exams.html
+handbook.css
+
+Do not put them inside attached_assets or public/data.
+
+Update the Teacher Hub Department tab:
+1. Find the existing “Maths Dept Handbook” link.
+2. Replace its current link with:
+   handbook.html
+3. Keep the label:
+   Maths Dept Handbook
+4. Keep it under the Department tab.
+5. Keep “Teaching Allocation & Responsibilities” as the first item if it already exists.
+6. Put “Maths Dept Handbook” directly after “Teaching Allocation & Responsibilities”.
+
+Expected order under Department:
+1. Teaching Allocation & Responsibilities → allocations.html
+2. Maths Dept Handbook → handbook.html
+3. Reporting Guidelines
+4. Student Borrowing Log
+5. Teacher Resource Logins
+6. Department Meetings
+7. Competitions
+
+Make sure the handbook pages work on GitHub Pages:
+- https://wcibmaths.github.io/teacher-hub/handbook.html
+- https://wcibmaths.github.io/teacher-hub/handbook-vision.html
+- https://wcibmaths.github.io/teacher-hub/handbook-staff.html
+- https://wcibmaths.github.io/teacher-hub/handbook-curriculum.html
+- https://wcibmaths.github.io/teacher-hub/handbook-assessment.html
+- https://wcibmaths.github.io/teacher-hub/handbook-prep.html
+- https://wcibmaths.github.io/teacher-hub/handbook-exams.html
+
+Check all internal handbook links:
+- Contents links go to the correct section pages.
+- Previous/Next buttons work.
+- “Teaching Allocations” links go to allocations.html.
+- “Department Hub” links go back to index.html.
+- handbook.css loads correctly on every handbook page.
+
+Do not change the content of the handbook pages.
+Do not change private SharePoint links.
+Do not change Teacher Hub resource links.
+
+Show me the diff before committing.
