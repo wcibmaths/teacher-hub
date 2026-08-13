@@ -177,12 +177,24 @@ a { text-decoration: none; color: inherit; }
 .sb-section-label:first-child { margin-top: 0; }
 
 /* sidebar key dates */
+.sb-kd-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-right: 8px;
+}
+.sb-kd-term {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: .04em;
+}
 .sb-kd {
-  margin: 2px 4px 0;
+  margin: 4px 4px 0;
   background: rgba(255,255,255,.07);
   border: 1px solid var(--on-dark-line);
   border-radius: 8px;
-  padding: 8px 10px;
+  padding: 10px 10px 9px;
 }
 .sb-kd-group {
   font-size: 8.5px;
@@ -190,58 +202,70 @@ a { text-decoration: none; color: inherit; }
   letter-spacing: .11em;
   text-transform: uppercase;
   color: var(--on-dark-dim);
-  margin: 6px 0 3px;
+  margin: 0 0 5px;
 }
-.sb-kd-group:first-child { margin-top: 0; }
+.sb-kd-group-gap { margin-top: 12px; }
 .sb-kd-item {
   display: flex;
-  align-items: baseline;
-  gap: 7px;
-  padding: 2px 0;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 0;
 }
-.sb-kd-date {
-  font-size: 9.5px;
-  font-weight: 700;
-  color: var(--accent);
-  min-width: 36px;
+.sb-kd-badge {
+  width: 30px;
   flex-shrink: 0;
+  text-align: center;
+  background: rgba(219,163,157,.18);
+  border-radius: 6px;
+  padding: 3px 0 4px;
 }
-.sb-kd-date-exam { color: #A9C4DE; }
-.sb-kd-txt {
+.sb-kd-badge-exam { background: rgba(169,196,222,.16); }
+.sb-kd-d { font-size: 11px; font-weight: 700; color: var(--accent); line-height: 1.1; }
+.sb-kd-badge-exam .sb-kd-d { color: #A9C4DE; }
+.sb-kd-mo {
+  font-size: 7.5px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--on-dark-muted);
+}
+.sb-kd-lbl { min-width: 0; }
+.sb-kd-t {
   font-size: 10.5px;
+  font-weight: 600;
   color: var(--on-dark);
+  line-height: 1.25;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.sb-kd-s {
+  font-size: 9px;
+  color: var(--on-dark-muted);
+  margin-top: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sb-kd-tag {
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: #A9C4DE;
+  background: rgba(169,196,222,.14);
+  border-radius: 4px;
+  padding: 1px 4px;
+  vertical-align: 1px;
+}
+.sb-kd-link {
+  display: block;
+  margin-top: 9px;
+  font-size: 9.5px;
+  font-weight: 600;
+  color: var(--accent);
+}
+.sb-kd-link:hover { text-decoration: underline; }
 
-.sb-link {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 9px 10px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background .15s, color .15s;
-  color: var(--on-dark);
-  font-size: 12.5px;
-  font-weight: 500;
-  margin-bottom: 1px;
-}
-.sb-link:hover { background: rgba(255,255,255,.08); color: var(--on-dark); }
-.sb-link.active {
-  background: var(--sidebar-active);
-  color: var(--on-dark);
-  box-shadow: inset 3px 0 0 var(--accent);
-}
-.sb-link.active svg { stroke: var(--on-dark); }
-.sb-link svg { flex-shrink: 0; }
-
-.sb-link-ext {
-  margin-left: auto;
-  opacity: .4;
-  font-size: 10px;
-}
 
 .sb-bottom {
   padding: 14px 20px;
@@ -340,11 +364,6 @@ a { text-decoration: none; color: inherit; }
 /* ══════════════════════════════════
    FEATURED CARDS ROW
 ══════════════════════════════════ */
-.feat-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-}
 
 /* Quick Access compact row */
 .qa-row {
@@ -372,125 +391,6 @@ a { text-decoration: none; color: inherit; }
 .qa-card:hover .qa-arrow { color: var(--text); }
 
 
-/* Key Dates inline panel */
-.kd-card {
-  grid-column: 1 / -1;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--r);
-  padding: 14px 16px 12px;
-  display: flex;
-  flex-direction: column;
-  min-height: 110px;
-}
-.kd-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-.kd-title-row {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--text);
-}
-.kd-sub {
-  font-size: 10px;
-  color: var(--muted);
-  font-weight: 400;
-}
-.kd-rows {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px 14px;
-  flex: 1;
-}
-.kd-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.kd-date {
-  background: var(--clay-bg);
-  border-radius: 7px;
-  padding: 4px 8px 5px;
-  min-width: 40px;
-  text-align: center;
-  flex-shrink: 0;
-}
-.kd-d {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--orange-d);
-  line-height: 1.05;
-}
-.kd-m {
-  font-size: 8.5px;
-  font-weight: 600;
-  color: var(--orange-d);
-  text-transform: uppercase;
-  letter-spacing: .06em;
-  margin-top: 1px;
-}
-.kd-label { min-width: 0; }
-.kd-lbl-title {
-  font-size: 11.5px;
-  font-weight: 500;
-  color: var(--text);
-  line-height: 1.3;
-}
-.kd-lbl-sub {
-  font-size: 10px;
-  color: var(--muted);
-  margin-top: 1px;
-}
-
-/* Key Dates — sectioned variant */
-.kd-section + .kd-section {
-  margin-top: 10px;
-  padding-top: 10px;
-  border-top: 1px solid var(--border);
-}
-.kd-section-label {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 9.5px;
-  font-weight: 600;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 7px;
-}
-.kd-link {
-  font-size: 10px;
-  font-weight: 500;
-  color: var(--blue-d);
-  text-decoration: none;
-  text-transform: none;
-  letter-spacing: 0;
-}
-.kd-link:hover { color: var(--blush-d); }
-.kd-date.kd-date-exam { background: var(--blue-bg); }
-.kd-date.kd-date-exam .kd-d,
-.kd-date.kd-date-exam .kd-m { color: var(--blue-d); }
-.kd-tag {
-  display: inline-block;
-  font-size: 8.5px;
-  font-weight: 600;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  color: var(--blue-d);
-  background: var(--blue-bg);
-  border-radius: 4px;
-  padding: 1px 5px;
-  margin-left: 6px;
-  vertical-align: 1px;
-}
-.kd-rows-exam { grid-template-columns: 1fr; gap: 6px; }
 
 /* ══════════════════════════════════
    SECTION HEADER
@@ -881,7 +781,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .topbar   { animation: up .3s ease both; }
-.feat-row { animation: up .35s .05s ease both; }
+.sow-card { animation: up .35s .05s ease both; }
 .main > *:nth-child(2) { animation: up .35s .08s ease both; }
 .main > *:nth-child(3) { animation: up .35s .11s ease both; }
 .main > *:nth-child(4) { animation: up .35s .14s ease both; }
@@ -892,10 +792,8 @@ a { text-decoration: none; color: inherit; }
 ══════════════════════════════════ */
 @media (max-width: 900px) {
   .sidebar { width: 60px; }
-  .sb-name, .sb-sub, .sb-term, .sb-section-label, .sb-link span, .sb-link-ext, .sb-date, .sb-kd { display: none; }
-  .sb-link { justify-content: center; padding: 10px; }
+  .sb-name, .sb-sub, .sb-term, .sb-section-label, .sb-date, .sb-kd, .sb-kd-head { display: none; }
   .body { grid-template-columns: 1fr; padding: 16px; }
-  .feat-row { grid-template-columns: repeat(2, 1fr); }
   .teach-grid { grid-template-columns: 1fr 1fr; }
   .plat-grid { grid-template-columns: repeat(3, 1fr); }
 }
@@ -920,52 +818,47 @@ a { text-decoration: none; color: inherit; }
   </div>
 
   <nav class="sb-nav">
-    <div class="sb-section-label">Navigate</div>
-
-    <a class="sb-link active" href="https://wcibmaths.github.io/student-hub/" target="_blank">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-      <span>Student Hub</span>
-    </a>
-
-    <a class="sb-link" href="https://wcibmaths.github.io/sow/" target="_blank">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-      <span>Scheme of Work</span>
-      <span class="sb-link-ext">↗</span>
-    </a>
-
-    <a class="sb-link" href="#teach">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-      <span>Teaching Resources</span>
-    </a>
-
-    <a class="sb-link" href="#assess">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-      <span>Assessment &amp; Data</span>
-    </a>
-
-    <a class="sb-link" href="#platforms">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-      <span>Platforms</span>
-    </a>
-
-    <a class="sb-link" href="#dept">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-      <span>Department</span>
-    </a>
-
-    <a class="sb-link" href="#exam">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-      <span>Exam Resources</span>
-    </a>
-
-    <div class="sb-section-label">Key Dates</div>
+    <div class="sb-kd-head">
+      <span class="sb-section-label">Key Dates</span>
+      <span class="sb-kd-term" id="kd-term">Term 1 2026/27</span>
+    </div>
     <div class="sb-kd">
       <div class="sb-kd-group">Academic</div>
-      <div class="sb-kd-item"><span class="sb-kd-date">24 Aug</span><span class="sb-kd-txt">Term 1 Begins</span></div>
-      <div class="sb-kd-item"><span class="sb-kd-date">TBC</span><span class="sb-kd-txt">Half-Term Break</span></div>
-      <div class="sb-kd-group">External Exams</div>
-      <div class="sb-kd-item"><span class="sb-kd-date sb-kd-date-exam">04 Nov</span><span class="sb-kd-txt">IGCSE Maths A · P1</span></div>
-      <div class="sb-kd-item"><span class="sb-kd-date sb-kd-date-exam">06 Nov</span><span class="sb-kd-txt">IGCSE Maths A · P2</span></div>
+      <div class="sb-kd-item">
+        <div class="sb-kd-badge"><div class="sb-kd-d">24</div><div class="sb-kd-mo">Aug</div></div>
+        <div class="sb-kd-lbl"><div class="sb-kd-t">Term 1 Begins</div><div class="sb-kd-s">First day · 2026/27</div></div>
+      </div>
+      <div class="sb-kd-item">
+        <div class="sb-kd-badge"><div class="sb-kd-d">—</div><div class="sb-kd-mo">TBC</div></div>
+        <div class="sb-kd-lbl"><div class="sb-kd-t">Half-Term Break</div><div class="sb-kd-s">Awaiting school calendar</div></div>
+      </div>
+      <div class="sb-kd-item">
+        <div class="sb-kd-badge"><div class="sb-kd-d">—</div><div class="sb-kd-mo">TBC</div></div>
+        <div class="sb-kd-lbl"><div class="sb-kd-t">Data Drop 1</div><div class="sb-kd-s">Awaiting school calendar</div></div>
+      </div>
+      <div class="sb-kd-item">
+        <div class="sb-kd-badge"><div class="sb-kd-d">—</div><div class="sb-kd-mo">TBC</div></div>
+        <div class="sb-kd-lbl"><div class="sb-kd-t">Reports Deadline</div><div class="sb-kd-s">Awaiting school calendar</div></div>
+      </div>
+
+      <div class="sb-kd-group sb-kd-group-gap">External Exams</div>
+      <div class="sb-kd-item">
+        <div class="sb-kd-badge sb-kd-badge-exam"><div class="sb-kd-d">30</div><div class="sb-kd-mo">Oct</div></div>
+        <div class="sb-kd-lbl"><div class="sb-kd-t">Further Pure · P1 <span class="sb-kd-tag">IGCSE</span></div><div class="sb-kd-s">Fri · Morning · 2h · 4PM1</div></div>
+      </div>
+      <div class="sb-kd-item">
+        <div class="sb-kd-badge sb-kd-badge-exam"><div class="sb-kd-d">04</div><div class="sb-kd-mo">Nov</div></div>
+        <div class="sb-kd-lbl"><div class="sb-kd-t">Maths A · P1 F/H <span class="sb-kd-tag">IGCSE</span></div><div class="sb-kd-s">Wed · Morning · 2h · 4MA1</div></div>
+      </div>
+      <div class="sb-kd-item">
+        <div class="sb-kd-badge sb-kd-badge-exam"><div class="sb-kd-d">06</div><div class="sb-kd-mo">Nov</div></div>
+        <div class="sb-kd-lbl"><div class="sb-kd-t">Maths A · P2 F/H <span class="sb-kd-tag">IGCSE</span></div><div class="sb-kd-s">Fri · Morning · 2h · 4MA1</div></div>
+      </div>
+      <div class="sb-kd-item">
+        <div class="sb-kd-badge sb-kd-badge-exam"><div class="sb-kd-d">—</div><div class="sb-kd-mo">Jan</div></div>
+        <div class="sb-kd-lbl"><div class="sb-kd-t">Maths · Jan 2027 <span class="sb-kd-tag">IAL</span></div><div class="sb-kd-s">Series dates on Pearson</div></div>
+      </div>
+      <a class="sb-kd-link" href="https://qualifications.pearson.com/en/support/support-topics/exams/exam-timetables.html" target="_blank">Full exam timetable →</a>
     </div>
   </nav>
 
@@ -1003,80 +896,6 @@ a { text-decoration: none; color: inherit; }
   <div class="body">
     <div class="main">
 
-      <!-- QUICK ACCESS -->
-      <div class="qa-row">
-        <a class="qa-card qa-mint" href="https://wcibth.sharepoint.com/sites/Mathematics/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=3uJxar&CID=3f3ed975%2D9341%2D4081%2Dba09%2D4a752fef3d9d&FolderCTID=0x012000D0CF7BB6916D3541A8EDC8E4D61F8DC0&id=%2Fsites%2FMathematics%2FShared%20Documents%2FMaths%20Team%20Hub%2F3%2E%20Assessment" target="_blank">
-          <div class="qa-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
-          <div class="qa-text"><div class="qa-title">Assessment Hub</div><div class="qa-meta">Trackers + Schedules</div></div>
-          <span class="qa-arrow">→</span>
-        </a>
-        <a class="qa-card qa-blue" href="https://wcibth.sharepoint.com/sites/Mathematics/Shared%20Documents/Maths%20Team%20Hub?csf=1&web=1&e=XnqkIf&CID=9133bfc3-d8ec-40f4-9779-10db4bf8b727" target="_blank">
-          <div class="qa-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
-          <div class="qa-text"><div class="qa-title">Maths Team Folder</div><div class="qa-meta">SharePoint · All files</div></div>
-          <span class="qa-arrow">→</span>
-        </a>
-      </div>
-
-      <!-- KEY DATES -->
-      <div class="feat-row">
-        <div class="kd-card">
-          <div class="kd-head">
-            <div class="kd-title-row">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--orange-d)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              <span class="kd-heading">Key Dates</span>
-            </div>
-            <span class="kd-sub" id="kd-term">Term 1 2026/27</span>
-          </div>
-
-          <div class="kd-section">
-            <div class="kd-section-label"><span>Academic</span></div>
-            <div class="kd-rows">
-              <div class="kd-item">
-                <div class="kd-date"><div class="kd-d">24</div><div class="kd-m">Aug</div></div>
-                <div class="kd-label"><div class="kd-lbl-title">Term 1 Begins</div><div class="kd-lbl-sub">First day · 2026/27</div></div>
-              </div>
-              <div class="kd-item">
-                <div class="kd-date"><div class="kd-d">—</div><div class="kd-m">TBC</div></div>
-                <div class="kd-label"><div class="kd-lbl-title">Half-Term Break</div><div class="kd-lbl-sub">Awaiting school calendar</div></div>
-              </div>
-              <div class="kd-item">
-                <div class="kd-date"><div class="kd-d">—</div><div class="kd-m">TBC</div></div>
-                <div class="kd-label"><div class="kd-lbl-title">Data Drop 1</div><div class="kd-lbl-sub">Awaiting school calendar</div></div>
-              </div>
-              <div class="kd-item">
-                <div class="kd-date"><div class="kd-d">—</div><div class="kd-m">TBC</div></div>
-                <div class="kd-label"><div class="kd-lbl-title">Reports Deadline</div><div class="kd-lbl-sub">Awaiting school calendar</div></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="kd-section">
-            <div class="kd-section-label">
-              <span>Upcoming External Exams</span>
-              <a class="kd-link" href="https://qualifications.pearson.com/en/support/support-topics/exams/exam-timetables.html" target="_blank">Full timetable →</a>
-            </div>
-            <div class="kd-rows kd-rows-exam">
-              <div class="kd-item">
-                <div class="kd-date kd-date-exam"><div class="kd-d">30</div><div class="kd-m">Oct</div></div>
-                <div class="kd-label"><div class="kd-lbl-title">Further Pure Maths · Paper 1<span class="kd-tag">IGCSE</span></div><div class="kd-lbl-sub">Fri · Morning · 2h · 4PM1/01</div></div>
-              </div>
-              <div class="kd-item">
-                <div class="kd-date kd-date-exam"><div class="kd-d">04</div><div class="kd-m">Nov</div></div>
-                <div class="kd-label"><div class="kd-lbl-title">Mathematics A · Paper 1F/1H<span class="kd-tag">IGCSE</span></div><div class="kd-lbl-sub">Wed · Morning · 2h · 4MA1</div></div>
-              </div>
-              <div class="kd-item">
-                <div class="kd-date kd-date-exam"><div class="kd-d">06</div><div class="kd-m">Nov</div></div>
-                <div class="kd-label"><div class="kd-lbl-title">Mathematics A · Paper 2F/2H<span class="kd-tag">IGCSE</span></div><div class="kd-lbl-sub">Fri · Morning · 2h · 4MA1</div></div>
-              </div>
-              <div class="kd-item">
-                <div class="kd-date kd-date-exam"><div class="kd-d">—</div><div class="kd-m">Jan</div></div>
-                <div class="kd-label"><div class="kd-lbl-title">IAL Maths · January 2027 series<span class="kd-tag">IAL</span></div><div class="kd-lbl-sub"><a class="kd-link" href="https://qualifications.pearson.com/en/support/support-topics/exams/exam-timetables.html" target="_blank">View dates on Pearson →</a></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <!-- SCHEME OF WORK FULL CARD -->
       <a class="sow-card" href="https://wcibmaths.github.io/sow/" target="_blank">
         <div class="sow-left">
@@ -1093,6 +912,20 @@ a { text-decoration: none; color: inherit; }
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </button>
       </a>
+
+      <!-- QUICK ACCESS -->
+      <div class="qa-row">
+        <a class="qa-card qa-mint" href="https://wcibth.sharepoint.com/sites/Mathematics/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=3uJxar&CID=3f3ed975%2D9341%2D4081%2Dba09%2D4a752fef3d9d&FolderCTID=0x012000D0CF7BB6916D3541A8EDC8E4D61F8DC0&id=%2Fsites%2FMathematics%2FShared%20Documents%2FMaths%20Team%20Hub%2F3%2E%20Assessment" target="_blank">
+          <div class="qa-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+          <div class="qa-text"><div class="qa-title">Assessment Hub</div><div class="qa-meta">Trackers + Schedules</div></div>
+          <span class="qa-arrow">→</span>
+        </a>
+        <a class="qa-card qa-blue" href="https://wcibth.sharepoint.com/sites/Mathematics/Shared%20Documents/Maths%20Team%20Hub?csf=1&web=1&e=XnqkIf&CID=9133bfc3-d8ec-40f4-9779-10db4bf8b727" target="_blank">
+          <div class="qa-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
+          <div class="qa-text"><div class="qa-title">Maths Team Folder</div><div class="qa-meta">SharePoint · All files</div></div>
+          <span class="qa-arrow">→</span>
+        </a>
+      </div>
 
       <!-- TEACHING RESOURCES -->
       <div class="teach-section" id="teach">
