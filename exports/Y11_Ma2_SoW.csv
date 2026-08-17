@@ -1,0 +1,88 @@
+id,week,dates,term,cycle,unit,unitName,lessonNo,lessonName,type,obj,alert
+y11_001,M1A,24–28 Aug 2026,Michaelmas,,0,Induction,,"Routines, expectations and Year 11 diagnostic",flex,Set up Year 11 routines and run initial diagnostic.,"INSET Mon, Family Orientation Tue, Welcome Day Wed. Year 11 induction and diagnostic only."
+y11_002,M1A,24–28 Aug 2026,Michaelmas,,0,Induction,,"Diagnostic review, book/folder setup and exam-paper expectations",flex,"Baseline review, folder setup and exam-paper expectations. Identify gaps from Year 10.",
+y11_003,M2B,31 Aug–4 Sep 2026,Michaelmas,,1,Unit 1 — Advanced Number and Algebra,,"Surds 1 — simplifying, expanding and operating with surds",core,Simplify surds; expand brackets involving surds; add and subtract surds.,
+y11_004,M2B,31 Aug–4 Sep 2026,Michaelmas,,1,Unit 1 — Advanced Number and Algebra,,Surds 2 — rationalising denominators,core,Rationalise denominators of the form a/√b and a/(c+√b).,
+y11_005,M2B,31 Aug–4 Sep 2026,Michaelmas,,1,Unit 1 — Advanced Number and Algebra,,Fractional and negative indices,core,Evaluate and simplify expressions with fractional and negative indices.,
+y11_006,M3A,7–11 Sep 2026,Michaelmas,,1,Unit 1 — Advanced Number and Algebra,,Algebraic proof 1 — integer and parity proofs,core,"Construct algebraic proofs involving integers, consecutive numbers and parity.",
+y11_007,M3A,7–11 Sep 2026,Michaelmas,,1,Unit 1 — Advanced Number and Algebra,,Unit 1 revision lesson before assessment,flex,"Mixed review, common errors and exam-style practice for Unit 1.",
+y11_008,M3A,7–11 Sep 2026,Michaelmas,,1,Unit 1 — Advanced Number and Algebra,,Unit 1 full end-of-unit assessment,assessment,Advanced number and algebra assessment.,
+y11_009,M4B,14–18 Sep 2026,Michaelmas,,1,Unit 1 — Advanced Number and Algebra,,"Unit 1 reflection, correction and reteach",flex,Correct misconceptions from Unit 1; bridge into Unit 2A.,
+y11_010,M4B,14–18 Sep 2026,Michaelmas,,2,Unit 2A — Advanced Quadratics and Equations,,Quadratic formula and discriminant,core,Use the quadratic formula; interpret the discriminant.,
+y11_011,M4B,14–18 Sep 2026,Michaelmas,,2,Unit 2A — Advanced Quadratics and Equations,,Problems leading to quadratic equations,core,Set up and solve quadratic equations from geometric and worded contexts.,
+y11_012,M5A,21–25 Sep 2026,Michaelmas,,2,Unit 2A — Advanced Quadratics and Equations,,Quadratic simultaneous equations 1,core,Solve simultaneous equations where one is linear and one is quadratic.,
+y11_013,M5A,21–25 Sep 2026,Michaelmas,,2,Unit 2A — Advanced Quadratics and Equations,,Quadratic simultaneous equations 2 and graph interpretation,core,Extend to harder cases; interpret solutions graphically.,
+y11_014,M5A,21–25 Sep 2026,Michaelmas,,2,Unit 2A — Advanced Quadratics and Equations,,Quadratic inequalities,core,Solve quadratic inequalities; represent solutions on number lines and in set notation.,
+y11_015,M6B,28 Sep–2 Oct 2026,Michaelmas,,2,Unit 2A — Advanced Quadratics and Equations,,Mixed quadratics consolidation and exam practice,flex,Mixed exam-style consolidation across Unit 2A content.,
+y11_016,M6B,28 Sep–2 Oct 2026,Michaelmas,,2,Unit 2A — Advanced Quadratics and Equations,,Unit 2A checkpoint quiz + feedback/bridge,assessment,20–25 min checkpoint on Unit 2A content; remaining lesson for feedback and bridge into Unit 2B.,
+y11_017,M6B,28 Sep–2 Oct 2026,Michaelmas,,3,Unit 2B — Functions and Calculus,,Function notation launch and retrieval from Unit 2A,core,Introduce function notation and retrieve key quadratic ideas.,
+y11_018,M7A,5–9 Oct 2026,Michaelmas,,3,Unit 2B — Functions and Calculus,,"Functions 1 — notation, domain and range",core,Use function notation f(x); state domain and range.,
+y11_019,M7A,5–9 Oct 2026,Michaelmas,,3,Unit 2B — Functions and Calculus,,Functions 2 — composite and inverse functions,core,Find composite functions fg(x) and inverse functions f⁻¹(x).,
+y11_020,M7A,5–9 Oct 2026,Michaelmas,,3,Unit 2B — Functions and Calculus,,Differentiation 1 — gradient function and stationary points,core,Differentiate polynomials; find gradient at a point and stationary points.,
+y11_021,M8B,12–16 Oct 2026,Michaelmas,,3,Unit 2B — Functions and Calculus,,"Differentiation 2 — maxima, minima and graph interpretation",core,Classify stationary points; use calculus to analyse curve behaviour.,National holiday Tue 13 Oct. Final week before Michaelmas half-term.
+y11_022,M8B,12–16 Oct 2026,Michaelmas,,3,Unit 2B — Functions and Calculus,,Unit 2B revision lesson before assessment,flex,"Mixed review, common errors and exam-style practice for Unit 2B.",
+y11_023,M8B,12–16 Oct 2026,Michaelmas,,3,Unit 2B — Functions and Calculus,,Unit 2B full end-of-unit assessment,assessment,Functions and calculus assessment.,
+y11_024,M10B,2–6 Nov 2026,Michaelmas,,3,Unit 2B — Functions and Calculus,,"Unit 2B reflection, correction and reteach",flex,Correct misconceptions from Unit 2B assessment; bridge into Unit 3.,IR1 evidence window opens.
+y11_025,M10B,2–6 Nov 2026,Michaelmas,,4,Unit 3 — Advanced Statistics Completion,,Histograms 2 — interpretation and exam-style problems,core,Interpret histograms; solve exam-style problems involving frequency density.,
+y11_026,M10B,2–6 Nov 2026,Michaelmas,,4,Unit 3 — Advanced Statistics Completion,,Cumulative frequency diagrams and median estimates,core,Construct and interpret cumulative frequency diagrams; estimate the median.,
+y11_027,M11A,9–13 Nov 2026,Michaelmas,,4,Unit 3 — Advanced Statistics Completion,,"Box plots, quartiles and IQR from grouped data",core,Draw and interpret box plots; find quartiles and IQR from grouped data.,Year 11 mock report marking and IR1 checking window.
+y11_028,M11A,9–13 Nov 2026,Michaelmas,,4,Unit 3 — Advanced Statistics Completion,,Unit 3 revision lesson before assessment,flex,"Mixed review, common errors and exam-style practice for Unit 3.",
+y11_029,M11A,9–13 Nov 2026,Michaelmas,,4,Unit 3 — Advanced Statistics Completion,,Unit 3 full end-of-unit assessment,assessment,Advanced statistics assessment.,
+y11_030,M12B,16–20 Nov 2026,Michaelmas,,4,Unit 3 — Advanced Statistics Completion,,"Unit 3 reflection, correction and reteach",flex,Correct misconceptions from Unit 3 assessment; bridge into Unit 4.,IR1 checking and publication window.
+y11_031,M12B,16–20 Nov 2026,Michaelmas,,5,Unit 4 — Advanced Graphs,,Estimating gradients of curves,core,Estimate the gradient of a curve at a point using tangents.,
+y11_032,M12B,16–20 Nov 2026,Michaelmas,,5,Unit 4 — Advanced Graphs,,Using graphs to solve equations,core,Use graphical methods to solve equations and inequalities.,
+y11_033,M13A,23–27 Nov 2026,Michaelmas,,5,Unit 4 — Advanced Graphs,,Trigonometric graphs 1,core,"Sketch and interpret sine, cosine and tangent graphs.",IR1 publication week.
+y11_034,M13A,23–27 Nov 2026,Michaelmas,,5,Unit 4 — Advanced Graphs,,Graph transformations 1 — translations and stretches,core,Apply and describe translations f(x)+a and f(x+a); stretches f(ax).,
+y11_035,M13A,23–27 Nov 2026,Michaelmas,,5,Unit 4 — Advanced Graphs,,Graph transformations 2 — mixed transformations,core,Apply reflections f(-x) and -f(x); combine transformations.,
+y11_036,M14B,30 Nov–4 Dec 2026,Michaelmas,,5,Unit 4 — Advanced Graphs,,Unit 4 revision lesson before assessment,flex,"Mixed review, common errors and exam-style practice for Unit 4.",IR1 published Thu 3 Dec.
+y11_037,M14B,30 Nov–4 Dec 2026,Michaelmas,,5,Unit 4 — Advanced Graphs,,Unit 4 full end-of-unit assessment,assessment,Advanced graphs assessment.,
+y11_038,M14B,30 Nov–4 Dec 2026,Michaelmas,,5,Unit 4 — Advanced Graphs,,"Unit 4 reflection, correction and reteach",flex,Correct misconceptions from Unit 4; bridge into Unit 5.,
+y11_039,M15A,7–11 Dec 2026,Michaelmas,,6,Unit 5 — Transformations,,Enlargement and combined transformations,core,Enlargement with negative/fractional scale factors; combined and inverse transformations.,School closed Mon 7 Dec and Thu 10 Dec. Year 11 PTC Wed 9 Dec.
+y11_040,M15A,7–11 Dec 2026,Michaelmas,,6,Unit 5 — Transformations,,Unit 5 revision lesson before assessment,flex,"Mixed review, common errors and exam-style practice for Unit 5.",
+y11_041,M15A,7–11 Dec 2026,Michaelmas,,6,Unit 5 — Transformations,,Unit 5 full end-of-unit assessment,assessment,Transformations assessment.,
+y11_042,M16B,14–18 Dec 2026,Michaelmas,,6,Unit 5 — Transformations,,"Unit 5 reflection, correction and reteach",flex,Correct misconceptions from Unit 5; set prep task for holiday.,Last teaching day Tue 16 Dec. No new unit start.
+y11_043,M16B,14–18 Dec 2026,Michaelmas,,0,Retrieval,,"Michaelmas mixed retrieval: algebra, graphs and transformations",flex,Retrieval across Michaelmas units 1–5.,
+y11_044,M16B,14–18 Dec 2026,Michaelmas,,0,Retrieval,,End-of-term consolidation and prep task setting,flex,Consolidate key ideas and set holiday preparation task.,
+y11_045,L1A,7–8 Jan 2027,Lent,,7,Unit 6 — Advanced Geometry,,Similarity — area and volume scale factors,core,Use area and volume scale factors for similar shapes.,INSET Wed 6 Jan. Term starts Thu 7 Jan — partial teaching week.
+y11_046,L1A,7–8 Jan 2027,Lent,,7,Unit 6 — Advanced Geometry,,Sectors — area and arc length,core,Calculate arc length and sector area in exact and decimal form.,
+y11_047,L2B,11–15 Jan 2027,Lent,,7,Unit 6 — Advanced Geometry,,Spheres and cones — surface area and volume,core,Apply formulae for surface area and volume of spheres and cones.,
+y11_048,L2B,11–15 Jan 2027,Lent,,7,Unit 6 — Advanced Geometry,,Sine rule,core,Apply the sine rule to find sides and angles in non-right-angled triangles.,
+y11_049,L2B,11–15 Jan 2027,Lent,,7,Unit 6 — Advanced Geometry,,Cosine rule,core,Apply the cosine rule to find sides and angles in non-right-angled triangles.,
+y11_050,L3A,18–22 Jan 2027,Lent,,7,Unit 6 — Advanced Geometry,,Area of a triangle and harder trig problems,core,Use ½ab sin C; solve multi-step trigonometry problems.,IR2 opens.
+y11_051,L3A,18–22 Jan 2027,Lent,,7,Unit 6 — Advanced Geometry,,3D Pythagoras,core,Apply Pythagoras' theorem in three dimensions.,
+y11_052,L3A,18–22 Jan 2027,Lent,,7,Unit 6 — Advanced Geometry,,3D trigonometry,core,Apply trigonometry in three-dimensional problems.,
+y11_053,L4B,25–29 Jan 2027,Lent,,7,Unit 6 — Advanced Geometry,,Circle theorems 1,core,"Apply angle in semicircle, angles in same segment and angles at centre.",IR2 closes.
+y11_054,L4B,25–29 Jan 2027,Lent,,7,Unit 6 — Advanced Geometry,,Circle theorems 2 and alternate segment theorem,core,"Apply cyclic quadrilateral, tangent-radius, and alternate segment theorem.",
+y11_055,L4B,25–29 Jan 2027,Lent,,7,Unit 6 — Advanced Geometry,,"Vectors 1 — notation, addition and scalar multiplication",core,"Use column vector notation; add, subtract and scale vectors.",
+y11_056,L5A,1–5 Feb 2027,Lent,,7,Unit 6 — Advanced Geometry,,Vectors 2 — magnitude and vector geometry,core,Calculate magnitude; use vector geometry to prove geometric results.,HoD/HoF checking of IR2.
+y11_057,L5A,1–5 Feb 2027,Lent,,7,Unit 6 — Advanced Geometry,,Unit 6 revision lesson before assessment,flex,"Mixed review, common errors and exam-style practice for Unit 6.",
+y11_058,L5A,1–5 Feb 2027,Lent,,7,Unit 6 — Advanced Geometry,,Unit 6 full end-of-unit assessment,assessment,Advanced geometry assessment.,
+y11_059,L6B,8–12 Feb 2027,Lent,,7,Unit 6 — Advanced Geometry,,"Unit 6 reflection, correction and reteach",flex,Correct misconceptions from Unit 6; bridge into mock preparation.,Final week before Lent half-term. No new unit start.
+y11_060,L6B,8–12 Feb 2027,Lent,,0,Mock Preparation,,Mock preparation: geometry and advanced algebra retrieval,flex,"Retrieval across geometry, advanced algebra and calculus before Year 11 mock.",
+y11_061,L6B,8–12 Feb 2027,Lent,,0,Mock Preparation,,Mock preparation: calculator strategy and common errors,flex,"Exam technique, calculator strategy and common mark-scheme errors.",
+y11_062,L8B,1–5 Mar 2027,Lent,,0,Mock Review,,Mock review: paper-level gap analysis,flex,Return and analyse mock papers; identify class-level and individual gaps.,Year 11 mock results available. Mock review lessons.
+y11_063,L8B,1–5 Mar 2027,Lent,,0,Mock Review,,Mock review: targeted reteaching from mock outcomes,flex,Targeted reteaching of highest-impact topics from mock outcomes.,
+y11_064,L9A,8–12 Mar 2027,Lent,,8,Unit 7 — Probability and Venn Diagrams,,"Basic probability, sample spaces and relative frequency",core,"Probability scale, listing outcomes and relative frequency.",Mock marking and Full Report 3 window.
+y11_065,L9A,8–12 Mar 2027,Lent,,8,Unit 7 — Probability and Venn Diagrams,,Tree diagrams — independent and dependent events,core,Use tree diagrams for independent and dependent events.,
+y11_066,L9A,8–12 Mar 2027,Lent,,8,Unit 7 — Probability and Venn Diagrams,,Conditional probability from tree diagrams,core,Calculate conditional probabilities using tree diagrams.,
+y11_067,L10B,15–19 Mar 2027,Lent,,8,Unit 7 — Probability and Venn Diagrams,,Venn diagrams and set notation,core,Construct and use Venn diagrams with set notation.,Full Report 3 checking window.
+y11_068,L10B,15–19 Mar 2027,Lent,,8,Unit 7 — Probability and Venn Diagrams,,Conditional probability from Venn diagrams,core,Extract conditional probabilities from Venn diagrams.,
+y11_069,L10B,15–19 Mar 2027,Lent,,8,Unit 7 — Probability and Venn Diagrams,,Three-set Venn diagrams and set-builder notation,core,Use three-set Venn diagrams; write solutions using set-builder notation.,
+y11_070,L11A,22–26 Mar 2027,Lent,,8,Unit 7 — Probability and Venn Diagrams,,Unit 7 revision lesson before assessment,flex,"Mixed review, common errors and exam-style practice for Unit 7.",Full Report 3 publication window.
+y11_071,L11A,22–26 Mar 2027,Lent,,8,Unit 7 — Probability and Venn Diagrams,,Unit 7 full end-of-unit assessment,assessment,Probability and Venn diagrams assessment.,
+y11_072,L11A,22–26 Mar 2027,Lent,,8,Unit 7 — Probability and Venn Diagrams,,"Unit 7 reflection, correction and reteach",flex,Correct misconceptions from Unit 7; begin exam preparation.,
+y11_073,L12B,29 Mar–2 Apr 2027,Lent,,0,Revision and Exam Preparation,,"Revision 2 — graphs, functions and calculus",flex,Targeted revision based on assessment and mock evidence.,"Final week before Easter. Last day Tue 1 Apr, 12pm close."
+y11_074,L12B,29 Mar–2 Apr 2027,Lent,,0,Revision and Exam Preparation,,Revision 3 — geometry and trigonometry strand,flex,"Targeted revision of geometry, trigonometry, circle theorems and vectors.",
+y11_075,L12B,29 Mar–2 Apr 2027,Lent,,0,Revision and Exam Preparation,,"Revision 4 — statistics, probability and vectors",flex,"Targeted revision of statistics, probability and vector geometry.",
+y11_076,S1A,19–23 Apr 2027,Summer,,0,Revision and Exam Preparation,,Full Paper 1H practice,flex,Timed full Paper 1H (non-calculator) practice under exam conditions.,Summer term starts Mon 19 Apr. Final revision and exam preparation window.
+y11_077,S1A,19–23 Apr 2027,Summer,,0,Revision and Exam Preparation,,Paper 1H feedback and gap reteach,flex,Mark and analyse Paper 1H; targeted reteaching of identified gaps.,
+y11_078,S1A,19–23 Apr 2027,Summer,,0,Revision and Exam Preparation,,Targeted topic rotation 1,flex,Structured topic rotation addressing highest-frequency exam content.,
+y11_079,S2B,26–30 Apr 2027,Summer,,0,Revision and Exam Preparation,,Full Paper 2H practice,flex,Timed full Paper 2H (calculator) practice under exam conditions.,
+y11_080,S2B,26–30 Apr 2027,Summer,,0,Revision and Exam Preparation,,Paper 2H feedback and gap reteach,flex,Mark and analyse Paper 2H; targeted reteaching of identified gaps.,
+y11_081,S2B,26–30 Apr 2027,Summer,,0,Revision and Exam Preparation,,Targeted topic rotation 2,flex,Structured topic rotation addressing class-specific weak areas.,
+y11_082,S3A,3–7 May 2027,Summer,,0,Revision and Exam Preparation,,Grade 7–9 problem solving: algebra and graphs,flex,Challenging exam-style questions targeting grades 7–9 in algebra and graphs.,
+y11_083,S3A,3–7 May 2027,Summer,,0,Revision and Exam Preparation,,Grade 7–9 problem solving: geometry and trigonometry,flex,Challenging exam-style questions targeting grades 7–9 in geometry and trigonometry.,
+y11_084,S3A,3–7 May 2027,Summer,,0,Revision and Exam Preparation,,Grade 7–9 problem solving: statistics and probability,flex,Challenging exam-style questions targeting grades 7–9 in statistics and probability.,
+y11_085,S4B,10–14 May 2027,Summer,,0,Revision and Exam Preparation,,"Final formulae, calculator and non-calculator routines",flex,"Revisit key formulae, calculator methods and written-method accuracy.",
+y11_086,S4B,10–14 May 2027,Summer,,0,Revision and Exam Preparation,,Individual gap-analysis intervention,flex,Personalised gap-targeting based on past-paper and mock analysis.,
+y11_087,S4B,10–14 May 2027,Summer,,0,Revision and Exam Preparation,,Pre-exam confidence paper and review,flex,"Final short practice paper; review, confidence-building and logistics.",
