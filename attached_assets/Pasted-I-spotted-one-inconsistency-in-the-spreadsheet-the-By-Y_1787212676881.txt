@@ -1,0 +1,129 @@
+I spotted one inconsistency in the spreadsheet: the **By Year Group** sheet says **Y9 Ma4 = ADE**, but the **Assessment Leads** sheet lists **Y9 lead = FTA** with set taught as **Ma4**. I would not make FTA the Ma4 teacher because that conflicts with the teaching allocation. The safer update is:
+
+* **Y9 teaching allocation:** Ma1 FTA, Ma2 HPA, Ma3 MKM, Ma4 ADE
+* **Y9 whole-year assessment lead:** FTA
+* **Y9 Ma1 accelerated assessment lead:** FTA
+
+The current `allocations.html` still has Year 9 using SSW as the whole-year lead and Ma4 teacher, so this needs updating. 
+
+Paste this into Replit:
+
+```text
+Update allocations.html using the latest Maths Teacher Timetable 2026 spreadsheet.
+
+Keep the current layout, colours, fonts, tables, filtering, and page design.
+Do not redesign the page.
+Make only the Year 9 teaching allocation and responsibility changes.
+
+1. Update Year 9 teaching allocation
+
+In the KS data array, update the Year 9 row to:
+
+Year 9:
+- Ma1: FTA
+- Ma2: HPA
+- Ma3: MKM
+- Ma4: ADE
+- Hours: 3.5
+- Cohort: 78
+- Assessment lead: FTA
+
+So the Year 9 object should become:
+
+{ yr:'Year 9', h:3.5, n:78, lead:'FTA', sets:{ Ma1:'FTA', Ma2:'HPA', Ma3:'MKM', Ma4:'ADE' } }
+
+Remove SSW from the Year 9 teaching allocation.
+
+2. Update Year 9 whole-year assessment lead
+
+In AS_YEAR, change the Year 9 row from SSW to FTA.
+
+Use:
+
+['Year 9','FTA','Ma1','Standard paper, Ma1 sits a separate accelerated paper']
+
+Important:
+The attached spreadsheet has a conflict: it lists Year 9 Ma4 as ADE in the teaching allocation, but also says the Y9 assessment lead is FTA. Therefore, keep the teaching allocation as Ma4 = ADE, and use FTA as the Year 9 assessment lead.
+
+3. Keep Year 9 accelerated assessment lead
+
+In AS_ACC, keep:
+
+['Year 9','FTA','Ma1','Separate accelerated assessment']
+
+Do not change this.
+
+4. Update Roles & Responsibilities
+
+In ROLES:
+
+For SSW:
+- remove “Y9 whole year group lead”
+- keep “Y11 Ma1 further path lead”
+- keep all A-level exam question responsibilities
+- keep Y13 co-teaching responsibility
+
+For FTA:
+- keep “Y11 whole year group lead”
+- keep “Y9 Ma1 accelerated path lead”
+- add “Y9 whole year group lead”
+
+Suggested FTA responsibilities should include:
+- KS3 curriculum coordinator
+- Y11 whole year group lead
+- Y9 whole year group lead
+- Y9 Ma1 accelerated path lead
+- Y12 Maths P1, P2
+- Y6 to Y7 transition coordinator
+
+5. Update “Who to ask” panel
+
+In the ASK data array, change:
+
+Assessment · Year 9
+
+from:
+SSW
+
+to:
+FTA
+
+6. Check teacher filter summaries
+
+Because the page calculates teacher class lists and weekly hours from the KS and SIX arrays, make sure the teacher filter summaries update automatically after the Year 9 change.
+
+Expected impact:
+- ADE should now show Year 9 Ma4.
+- SSW should no longer show a Year 9 class.
+- FTA should show Year 9 Ma1 and Year 9 assessment responsibility.
+- MKM should still show Year 9 Ma3.
+- HPA should still show Year 9 Ma2.
+
+7. Do not change unrelated data
+
+Do not change:
+- Year 7 allocation
+- Year 8 allocation
+- Year 10 allocation
+- Year 11 allocation
+- Sixth Form allocation
+- competitions and prep responsibilities
+- cohort sizes
+- styling
+- page layout
+- links back to index.html
+
+8. Final checks
+
+After editing, check:
+- Year 9 row displays FTA, HPA, MKM, ADE.
+- Year 9 assessment lead displays FTA.
+- Assessment Leads tab shows Year 9 lead as FTA.
+- Accelerated & further tab still shows Year 9 Ma1 lead as FTA.
+- Who to ask shows Assessment · Year 9 = FTA.
+- Selecting SSW no longer highlights Year 9.
+- Selecting ADE highlights Year 9 Ma4.
+- Selecting FTA highlights Year 9 Ma1 and shows the correct responsibilities.
+
+Show me the diff before committing.
+```

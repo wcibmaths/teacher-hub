@@ -564,7 +564,7 @@ const ORDER = ['SSW','ADE','FTA','MKM','HPA','XLN'];
 const KS = [
   { yr:'Year 7',  h:3.5, n:82, lead:'ADE', sets:{ Ma1:'MKM', Ma2:'HPA', Ma3:'ADE', Ma4:'FTA' } },
   { yr:'Year 8',  h:3.5, n:61, lead:'HPA', sets:{ Ma1:'ADE', Ma2:'MKM', Ma3:'FTA', Ma4:'HPA' } },
-  { yr:'Year 9',  h:3.5, n:78, lead:'SSW', sets:{ Ma1:'FTA', Ma2:'HPA', Ma3:'MKM', Ma4:'SSW' } },
+  { yr:'Year 9',  h:3.5, n:78, lead:'FTA', sets:{ Ma1:'FTA', Ma2:'HPA', Ma3:'MKM', Ma4:'ADE' } },
   { yr:'Year 10', h:3.0, n:71, lead:'HPA', sets:{ Ma1:'SSW', Ma2:'ADE', Ma3:'HPA', Ma4:'FTA' } },
   { yr:'Year 11', h:3.0, n:55, lead:'FTA', sets:{ Ma1:'SSW', Ma2:'FTA', Ma3:'ADE', Ma4:'MKM' } }
 ];
@@ -589,13 +589,13 @@ const SIX = [
 
 const ROLES = {
   SSW:[['Curriculum','KS5 curriculum coordinator'],
-       ['Assessment','Y9 whole year group lead'],
        ['Assessment','Y11 Ma1 further path lead'],
        ['Exam Qs','Y12 Maths & FM Stats S1'],
        ['Exam Qs','Y13 FM Stats S2, S3'],
        ['Teaching','Y13 Maths P3, P4 co-taught with ADE']],
   FTA:[['Curriculum','KS3 curriculum coordinator'],
        ['Assessment','Y11 whole year group lead'],
+       ['Assessment','Y9 whole year group lead'],
        ['Assessment','Y9 Ma1 accelerated path lead'],
        ['Exam Qs','Y12 Maths P1, P2'],
        ['Transition','Y6 to Y7 coordinator, feeder primaries, baselines, Y7 induction']],
@@ -619,7 +619,7 @@ const ROLES = {
 const AS_YEAR = [
   ['Year 7','ADE','Ma3','All sets sit the same paper'],
   ['Year 8','HPA','Ma4','Standard paper, Ma1 sits a separate accelerated paper'],
-  ['Year 9','SSW','Ma4','Standard paper, Ma1 sits a separate accelerated paper'],
+  ['Year 9','FTA','Ma1','Standard paper, Ma1 sits a separate accelerated paper'],
   ['Year 10','HPA','Ma3','Standard paper'],
   ['Year 11','FTA','Ma2','Standard paper']
 ];
@@ -656,7 +656,7 @@ const ASK = [
   ['Group','Curriculum'],
   ['FTA','KS3 curriculum'],['ADE','KS4 curriculum'],['SSW','KS5 curriculum'],
   ['Group','Assessment leads'],
-  ['ADE','Year 7'],['HPA','Year 8'],['SSW','Year 9'],['HPA','Year 10'],['FTA','Year 11'],
+  ['ADE','Year 7'],['HPA','Year 8'],['FTA','Year 9'],['HPA','Year 10'],['FTA','Year 11'],
   ['Group','Platforms & enrichment'],
   ['HPA','Sparx Maths, Y7 to 9'],['ADE','Dr Frost, Y10 to 13'],
   ['MKM','Competitions and UKMT'],['FTA','Y6 to Y7 transition'],['HPA','Displays and boards']
