@@ -1,0 +1,75 @@
+Replit instruction: update Teacher Hub Department links
+
+Update the right panel Department tab on the Teacher Hub page.
+
+Keep the current layout, fonts, colours, icons, and card style.
+Do not redesign the page.
+Do not change the Teaching Resources, Assessment & Data, Platforms, or Exam Resources sections.
+Only update the Department tab links.
+
+In the right panel Department tab, attach or update these items:
+
+1. Reporting Guidelines
+   Label: Reporting Guidelines
+   URL:
+   https://wcibth.sharepoint.com/sites/Mathematics/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=zMd74O&CID=09aa1d88%2Df41e%2D4010%2Dacf3%2Dcaae724f5915&FolderCTID=0x012000D0CF7BB6916D3541A8EDC8E4D61F8DC0&id=%2Fsites%2FMathematics%2FShared%20Documents%2FMaths%20Team%20Hub%2F3%2E%20Assessment%2FF%2E%20Assessment%20%26%20Reporting%20Guidelines
+
+2. Student Borrowing Log
+   Label: Student Borrowing Log
+   URL:
+   https://wcibth.sharepoint.com/:x:/r/sites/Mathematics/_layouts/15/Doc.aspx?sourcedoc=%7B189b9462-1a43-4809-80d4-f9284a682bd3%7D&action=editnew&web=1
+
+3. Teacher Resource Logins
+   Label: Teacher Resource Logins
+   URL:
+   https://wcibth.sharepoint.com/:x:/r/sites/Mathematics/_layouts/15/doc.aspx?sourcedoc=%7B5f1a5364-bb43-4d6a-99ed-c92e9462e31e%7D&action=edit&web=1
+
+4. Department Meetings
+   Label: Department Meetings
+   URL:
+   https://wcibth.sharepoint.com/sites/Mathematics/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=e52kyW&CID=f8027f03%2De2aa%2D472e%2D9f8c%2Dd33b2518a5a2&FolderCTID=0x012000D0CF7BB6916D3541A8EDC8E4D61F8DC0&id=%2Fsites%2FMathematics%2FShared%20Documents%2FMaths%20Team%20Hub%2F1%2E%20Administration%2FF%2E%20Meeting%20Minutes
+
+5. Master Document
+   Label: Master Document 26–27
+   URL:
+   https://wcibth.sharepoint.com/:x:/r/sites/SeniorSchoolAcademicstaff/_layouts/15/Doc.aspx?sourcedoc=%7B3F3A6FBB-BC69-432D-B0A8-A4D914D0F331%7D&file=Master%20Document%2026%20-%2027.xlsx&action=default&mobileredirect=true&DefaultItemOpen=1
+
+6. Absence/Cover Form
+   Label: Absence/Cover Form
+   URL:
+   https://wcibth.sharepoint.com/:w:/r/sites/SeniorSchoolAcademicstaff/_layouts/15/Doc.aspx?sourcedoc=%7B06293A74-4E9E-4419-8A35-4C495553D73A%7D&file=TEMPLATE%20Staff%20absence%20cover%20request%20form.docx&action=default&mobileredirect=true&web=1
+
+Keep these existing Department items if they already exist:
+
+1. Teaching Allocation & Responsibilities → allocations.html
+2. Maths Dept Handbook → handbook.html
+
+Suggested Department tab order:
+
+1. Teaching Allocation & Responsibilities
+2. Maths Dept Handbook
+3. Reporting Guidelines
+4. Student Borrowing Log
+5. Teacher Resource Logins
+6. Department Meetings
+7. Master Document 26–27
+8. Absence/Cover Form
+9. Competitions, if already present
+
+All SharePoint links should open in a new tab using:
+target="_blank"
+rel="noopener noreferrer"
+
+Final checks:
+
+* Department tab still opens correctly.
+* Each listed item has the correct URL.
+* Internal links still work:
+
+  * allocations.html
+  * handbook.html
+* No SharePoint URLs are changed or shortened.
+* No other right panel tabs are changed.
+* No page styling is changed.
+
+Show me the diff before committing.
