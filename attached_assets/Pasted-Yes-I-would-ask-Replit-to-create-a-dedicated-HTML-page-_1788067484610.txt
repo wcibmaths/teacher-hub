@@ -1,0 +1,73 @@
+Yes. I would ask Replit to create a dedicated HTML page and link the existing School Wide → Behaviour Sanction item to it.
+
+Use this instruction:
+
+Update the WCIB Maths Department Hub:
+
+[https://wcibmaths.github.io/teacher-hub/](https://wcibmaths.github.io/teacher-hub/)
+
+Under the right-side School Wide section, update Behaviour Sanction so it opens a new HTML page.
+
+Create a new page based on the attached 2026/27 Senior School Behaviour Logging guide. Use the attached document as the source of truth. 
+
+Page title:
+Senior School Behaviour and Sanctions
+
+Include two clear sections:
+
+1. Behaviour Logging Process
+
+Recreate the process from page 1 in a clean web format.
+
+Include:
+
+* One-off low-level behaviour
+* Repeated low-level behaviour
+* Behaviour within one subject
+* Behaviour across multiple subjects
+* Lateness and organisation
+* Lunch Time Keep In process
+* After School Keep In process
+* HoD/HoF and HoY responsibilities
+* Parent communication
+* iSAMS logging
+* Report Card process
+
+Also include the iSAMS guidance:
+
+* Select the appropriate category
+* Give a description of what happened
+* Notifications go to Tutor, HoY, AHP and DHP
+
+2. Behaviour Levels and Sanctions
+
+Recreate the table from page 2 with:
+
+Level 1, College Concern
+Level 2, Repeated Behaviours
+Level 3
+Level 4
+Level 5
+Level 6
+
+For each level show:
+
+* Example Behaviour
+* Example Consequence
+* Communication Home
+* Who is responsible
+
+Preserve the wording and meaning from the attached policy. Do not invent or simplify sanctions.
+
+Include the note at the bottom explaining that staff should use professional judgement depending on context and individual circumstances.
+
+Design:
+
+* Match the existing Teacher Hub style.
+* Make the page easy to scan.
+* Use clear coloured level labels similar to the original document.
+* Make the table responsive.
+* Add a Back to Teacher Hub link.
+* Do not change other Teacher Hub sections.
+
+Then update the existing Behaviour Sanction link so it opens this new page.

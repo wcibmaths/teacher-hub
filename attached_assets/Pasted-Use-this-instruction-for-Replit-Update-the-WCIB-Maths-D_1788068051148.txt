@@ -1,0 +1,98 @@
+Use this instruction for Replit:
+
+Update the WCIB Maths Department Hub:
+
+[https://wcibmaths.github.io/teacher-hub/](https://wcibmaths.github.io/teacher-hub/)
+
+On the right panel:
+
+1. Exam Resources
+
+* Remove “Edexcel Exam Materials”.
+
+2. Pathway & Exam Entries
+
+* Make “Pathway & Exam Entries” open a new HTML page.
+* Use the attached “Pathways and Exam Entries.xlsx” as the source.
+* Design the page for teachers to understand quickly.
+* Make the information evergreen, not tied to a particular academic year or current cohort.
+
+Structure the page into four clear sections:
+
+1. Maths Pathways
+   Show the progression through:
+
+* KS3 Support
+* KS3 Normal
+* KS3 Accelerated
+* IGCSE Higher
+* IGCSE + Further Pure Maths
+* IAL Mathematics
+* IAL Further Mathematics
+
+Use a simple pathway diagram or cards rather than a large spreadsheet-style table.
+
+2. IGCSE Exam Entries
+   Clearly distinguish:
+
+* Pearson Edexcel IGCSE Mathematics A Higher
+
+  * 4MA1/1H, 2 hours, calculator
+  * 4MA1/2H, 2 hours, calculator
+* Pearson Edexcel Further Pure Mathematics
+
+  * 4PM1/01, 2 hours, calculator
+  * 4PM1/02, 2 hours, calculator
+
+Also explain the two general entry routes:
+
+* Accelerated pathway, November sitting
+* Standard pathway, June sitting
+
+Do not include a specific calendar year.
+
+3. IAL Mathematics and Further Mathematics Exam Codes
+   Make the exam codes prominent and easy to copy:
+
+* P1: WMA11/01
+* P2: WMA12/01
+* P3: WMA13/01
+* P4: WMA14/01
+* FP1: WFM01/01
+* FP2: WFM02/01
+* FP3: WFM03/01
+* M1: WME01/01
+* M2: WME02/01
+* M3: WME03/01
+* S1: WST01/01
+* S2: WST02/01
+* S3: WST03/01
+* D1: WDM11/01
+
+Each IAL paper is 1 hour 30 minutes.
+
+4. Mock and Entry Timeline
+   Summarise the workbook guidance without specific years:
+
+November IGCSE entry:
+
+* First mock: late May to early June
+* Main mock: late August to early September
+* Final revision and past papers: September to October
+* External exams: November
+
+June IGCSE entry:
+
+* Mock: late February to early March
+* Final revision and past papers: April to May
+* External exams: June
+
+Design:
+
+* Match the Teacher Hub style.
+* Use clear headings, cards and compact tables.
+* Highlight exam codes visually.
+* Make the page responsive.
+* Add a “Back to Teacher Hub” link.
+* Do not include cohort-specific dates such as 2025, 2026 or 2027.
+* Do not change other Teacher Hub links or pages.
