@@ -46,6 +46,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 a { text-decoration: none; color: inherit; }
+body.reference-page { display: block; }
 
 /* ══════════ SIDEBAR ══════════ */
 .sidebar {
@@ -123,6 +124,18 @@ a { text-decoration: none; color: inherit; }
 
 .page { padding: 26px 30px 70px; max-width: 900px; }
 .page-wide { max-width: 1120px; }
+.reference-page .wrapper { min-height: 100vh; }
+.reference-page .page {
+  width: 100%; max-width: 1180px; margin: 0 auto;
+  padding: 28px 34px 70px;
+}
+.simple-back {
+  display: inline-flex; align-items: center; gap: 7px;
+  color: var(--mid); font-size: 11.5px; font-weight: 600;
+  padding: 7px 0;
+}
+.simple-back:hover { color: var(--blush-d); }
+.simple-back:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 3px; }
 
 /* ══════════ PAGE HEADINGS ══════════ */
 .ph { margin-bottom: 22px; }
@@ -454,6 +467,60 @@ table.sanctions li:last-child { margin-bottom: 0; }
 .level-5 { --level-bg: var(--sand-bg); --level-d: var(--sand-d); }
 .level-6 { --level-bg: var(--sage-bg); --level-d: var(--sage-d); }
 .sanction-label { display: block; color: var(--text); font-size: 10.5px; font-weight: 600; margin-top: 5px; }
+.who-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 12px; margin-bottom: 14px;
+}
+.who-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 18px 20px;
+  border-top: 4px solid var(--who-accent, var(--blue-d));
+}
+.who-card:nth-child(2) { --who-accent: var(--lav-d); }
+.who-card:nth-child(3) { --who-accent: var(--mint-d); }
+.who-card:nth-child(4) { --who-accent: var(--blush-d); }
+.who-kicker {
+  color: var(--who-accent, var(--blue-d)); font-size: 9px;
+  font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.who-card h3 { font-size: 14px; font-weight: 600; line-height: 1.35; }
+.who-card p { color: var(--mid); font-size: 11.5px; line-height: 1.65; margin-top: 8px; }
+.who-route {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 6px;
+  margin-top: 12px;
+}
+.who-pill {
+  padding: 4px 8px; border-radius: 6px;
+  background: var(--panel-soft); border: 1px solid var(--border-2);
+  color: var(--mid); font-size: 9.5px; font-weight: 600;
+}
+.who-arrow { color: var(--blush-d); font-size: 12px; font-weight: 700; }
+.code-table-grid {
+  display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  gap: 12px; align-items: start; margin-bottom: 14px;
+}
+.compact-table { min-width: 0 !important; }
+.compact-table td, .compact-table th { padding: 8px 11px !important; }
+.compact-table code {
+  display: inline-block; color: var(--blue-d); background: var(--blue-bg);
+  border-radius: 5px; padding: 3px 6px;
+  font: 700 10px ui-monospace, SFMono-Regular, Menlo, monospace;
+  white-space: nowrap;
+}
+.flowchart-card {
+  max-width: 760px; margin: 0 auto 20px; padding: 16px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r);
+}
+.flowchart-card img {
+  display: block; width: 100%; height: auto;
+  border-radius: 7px;
+}
+.flowchart-caption {
+  color: var(--muted); font-size: 10.5px; line-height: 1.55;
+  text-align: center; margin-top: 10px;
+}
 
 /* ══════════ PAGE FOOTER NAV ══════════ */
 .pagenav {
@@ -491,6 +558,9 @@ table.sanctions li:last-child { margin-bottom: 0; }
   .path-finale, .route-grid, .process-split { grid-template-columns: 1fr; }
   .process-card.wide { grid-column: auto; }
   .code-grid { grid-template-columns: repeat(2, 1fr); }
+  .who-grid, .code-table-grid { grid-template-columns: 1fr; }
+  .reference-page .page { padding: 20px 16px 60px; }
+  .reference-page .topbar { padding: 8px 16px; }
 }
 
 @media (max-width: 560px) {
@@ -503,6 +573,6 @@ table.sanctions li:last-child { margin-bottom: 0; }
   .sidebar, .topbar, .pagenav { display: none !important; }
   body { display: block; background: #fff; }
   .page { max-width: none; padding: 0; }
-  .card, .numcard, .staff-card, .spec, .callout, .tbl-wrap, .path-col, .path-finale-card, .entry-card, .route-card, .code-item, .timeline-card, .process-card, .sanction-wrap { break-inside: avoid; border: 1px solid #ccc; }
+  .card, .numcard, .staff-card, .spec, .callout, .tbl-wrap, .path-col, .path-finale-card, .entry-card, .route-card, .code-item, .timeline-card, .process-card, .sanction-wrap, .who-card, .flowchart-card { break-inside: avoid; border: 1px solid #ccc; }
   .page > * { animation: none; }
 }

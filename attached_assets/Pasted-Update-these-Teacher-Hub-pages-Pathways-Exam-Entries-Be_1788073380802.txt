@@ -1,0 +1,73 @@
+Update these Teacher Hub pages:
+
+Pathways & Exam Entries
+Behaviour & Sanctions
+Remove the “REFERENCE” sidebar
+
+Remove the entire left-side REFERENCE navigation from both pages.
+
+Do not replace it with another sidebar.
+
+Use a simple “Back to Teacher Hub” link at the top instead.
+
+Pathways & Exam Entries
+
+The current page needs clearer information about who sits which qualification.
+
+First inspect the Student Hub:
+https://wcibmaths.github.io/student-hub/
+
+Find the existing information explaining:
+
+Maths pathways
+IGCSE Mathematics
+Further Pure Mathematics
+which students/classes follow each route
+
+Do not duplicate this information separately if possible.
+
+If the Student Hub already uses shared JS/data, reuse the same source.
+
+If the information is currently hard-coded, move the pathway/exam-entry information into a shared data file or reusable component so both Student Hub and Teacher Hub read from the same source.
+
+The Teacher Hub page should then present:
+
+A. Who sits what?
+Make this the first and clearest section.
+
+Show the pathway from KS3 into:
+
+IGCSE Mathematics A
+IGCSE Further Pure Mathematics
+IAL Mathematics
+IAL Further Mathematics
+
+Clearly show which pathway/class normally sits each qualification.
+
+B. Exam entry codes
+Keep a compact teacher reference table with the exact Edexcel codes.
+
+C. Exam timing / entry route
+Explain November vs June entry where relevant, without making the page specific to one academic year.
+
+Improve the layout:
+
+no large sidebar
+wider main content
+clear pathway cards or diagram
+“Who sits what?” near the top
+compact exam-code tables
+easy to scan on a laptop
+Behaviour & Sanctions
+
+Remove the current written Section 1 Behaviour Logging Process.
+
+I will attach the current school behaviour flowchart.
+
+Recreate the flowchart visually on the webpage so staff can follow the decision process clearly.
+
+Keep the Behaviour Levels and Sanctions table underneath.
+
+Do not reinterpret or change the school policy wording.
+
+Match the Teacher Hub style and keep the page responsive.
