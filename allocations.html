@@ -564,22 +564,22 @@ const ORDER = ['SSW','ADE','FTA','MKM','HPA','XLN'];
 const KS = [
   { yr:'Year 7',  h:3.5, n:82, lead:'ADE', sets:{ Ma1:'MKM', Ma2:'HPA', Ma3:'ADE', Ma4:'FTA' } },
   { yr:'Year 8',  h:3.5, n:61, lead:'HPA', sets:{ Ma1:'ADE', Ma2:'MKM', Ma3:'FTA', Ma4:'HPA' } },
-  { yr:'Year 9',  h:3.5, n:78, lead:'FTA', sets:{ Ma1:'FTA', Ma2:'HPA', Ma3:'MKM', Ma4:'ADE' } },
+  { yr:'Year 9',  h:3.5, n:78, lead:'FTA', sets:{ Ma1:'FTA', Ma2:'HPA', Ma3:'MKM', Ma4:'SSW' } },
   { yr:'Year 10', h:3.0, n:71, lead:'HPA', sets:{ Ma1:'SSW', Ma2:'ADE', Ma3:'HPA', Ma4:'FTA' } },
   { yr:'Year 11', h:3.0, n:55, lead:'FTA', sets:{ Ma1:'SSW', Ma2:'FTA', Ma3:'ADE', Ma4:'MKM' } }
 ];
 
 const SIX = [
   { g:'Y12 Maths · Group 1', u:'P1, P2',   t:'SSW', h:4.0, note:'' },
-  { g:'Y12 Maths · Group 1', u:'S1',       t:'SSW', h:1.5, note:'' },
+  { g:'Y12 Maths · Group 1', u:'S1',       t:'ADE', h:1.5, note:'' },
   { g:'Y12 Maths · Group 2', u:'P1, P2',   t:'FTA', h:4.0, note:'' },
   { g:'Y12 Maths · Group 2', u:'S1',       t:'SSW', h:1.5, note:'' },
   { g:'Y12 Further Maths',   u:'P1 to P4', t:'MKM', h:7.0, note:'' },
-  { g:'Y12 Further Maths',   u:'S1',       t:'SSW', h:0,   note:'', join:true },
+  { g:'Y12 Further Maths',   u:'S1',       t:'SSW', h:1.5, note:'' },
   { g:'Y12 Further Maths',   u:'M1',       t:'XLN', h:1.5, note:'' },
-  { g:'Y13 Maths',           u:'P3, P4',   t:'ADE, SSW', h:2.0, note:'' },
+  { g:'Y13 Maths',           u:'P3, P4',   t:'ADE', h:2.0, note:'' },
   { g:'Y13 Maths',           u:'D1',       t:'XLN', h:1.5, note:'' },
-  { g:'Y13 Maths',           u:'M1',       t:'ADE', h:1.5, note:'' },
+  { g:'Y13 Maths',           u:'M1',       t:'ADE, SSW', h:1.5, note:'' },
   { g:'Y13 Further Maths',   u:'FP1, FP2', t:'HPA', h:5.5, note:'' },
   { g:'Y13 Further Maths',   u:'S2, S3',   t:'SSW', h:1.5, note:'' },
   { g:'Y13 Further Maths',   u:'M2',       t:'XLN', h:1.5, note:'' },
@@ -591,8 +591,7 @@ const ROLES = {
        ['Assessment','Y11 Ma1 further path lead'],
        ['Exam Qs','Y12 Maths & FM Stats S1'],
        ['Exam Qs','Y12 Maths P1, P2'],
-       ['Exam Qs','Y13 FM Stats S2, S3'],
-       ['Teaching','Y13 Maths P3, P4 co-taught with ADE']],
+       ['Exam Qs','Y13 FM Stats S2, S3']],
   FTA:[['Curriculum','KS3 curriculum coordinator'],
        ['Assessment','Y11 whole year group lead'],
        ['Assessment','Y9 whole year group lead'],
@@ -632,7 +631,7 @@ const AS_ACC = [
 const AS_AL = [
   ['Y12 Maths','P1, P2','SSW',''],
   ['Y12 Maths','S1','SSW',''],
-  ['Y13 Maths','P3, P4','ADE','Co-taught with SSW'],
+  ['Y13 Maths','P3, P4','ADE',''],
   ['Y13 Maths','D1','XLN',''],
   ['Y13 Maths','M1','ADE',''],
   ['Y12 FM','P1 to P4','MKM',''],
