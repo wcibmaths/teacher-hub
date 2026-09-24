@@ -1,0 +1,12 @@
+# Netlify response headers.
+#
+# The Scheme of Work tracker (wcib-sow.netlify.app) reads the whole-school
+# key dates from this site, which is a cross-origin request. GitHub Pages
+# allowed that automatically; Netlify does not, so the shared data files
+# need to say explicitly that other sites may read them.
+#
+# This applies only to /data/ — the pages themselves stay as they are.
+
+/data/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=300
