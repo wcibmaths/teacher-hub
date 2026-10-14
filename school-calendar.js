@@ -89,6 +89,13 @@
           if(!response.ok)throw new Error('Calendar HTTP '+response.status);
           const rows=normaliseRows(parseCsv(await response.text()));
           if(!rows.length)throw new Error('Empty school calendar');
+          // This academic year's confirmed reporting schedule has fourteen distinct actions.
+          // Reject old-schema or truncated feeds rather than silently losing deadlines.
+          const deadlines=rows.filter(row=>row.event_type==='reporting_deadline');
+          if(deadlines.length<14||deadlines.some(row=>!row.reporting_cycle||
+              !row.deadline_time||row.time_zone!==ZONE||!row.audience_years.length)){
+            throw new Error('Incomplete reporting schedule');
+          }
           state.rows=rows;state.status='fresh';
           try{localStorage.setItem(key,JSON.stringify({savedAt:Date.now(),rows}));}catch(e){}
         }catch(error){
