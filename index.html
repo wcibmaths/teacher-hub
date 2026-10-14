@@ -1041,6 +1041,7 @@ a { text-decoration: none; color: inherit; }
 
 <!-- Use the same canonical Pearson timetable data as the Scheme of Work dashboard. -->
 <script src="https://wcibmaths.github.io/sow/exam-dates.js?v=pearson-final-2026-11-r2"></script>
+<script src="./school-calendar.js?v=2026-10-14"></script>
 <script>
 // Greeting
 const now = new Date();
@@ -1123,37 +1124,35 @@ fetch('data/wcib_term_weeks_2026_27.csv')
   })
   .catch(() => { /* keep static fallback text */ });
 
-// Academic key dates (next 5 upcoming, no TBC, no past dates)
-fetch('data/wcib_academic_key_dates_2026_27.csv')
-  .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
-  .then(text => {
-    const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    const spanDays = e => (new Date(e.end_date) - new Date(e.start_date)) / 86400000;
-    const important = e =>
-      e.priority === 'high' ||
-      ['INSET','School holiday','Mock exams','Internal exams / assessment','Testing',
-       'Parent Teacher Conference','Reporting','Data / analytics','Term / orientation'].includes(e.category);
-    const events = parseCSV(text)
-      .filter(e => e.start_date && e.is_tbc !== 'TRUE' && e.start_date >= todayISO)
-      .filter(e => !e.end_date || spanDays(e) <= 7)   // skip term-length spans
-      .filter(important)
-      .sort((a, b) => a.start_date.localeCompare(b.start_date))
-      .slice(0, 5);
-    if (!events.length) return;
-    document.getElementById('sb-kd-academic').innerHTML = events.map(e => {
-      const d = new Date(e.start_date + 'T00:00:00');
-      const sub = d.toLocaleDateString('en-GB', { weekday: 'short' }) +
-        (e.end_date && e.end_date !== e.start_date
-          ? ' · to ' + new Date(e.end_date + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })
-          : '') + ' · ' + esc(e.category);
-      return '<div class="sb-kd-item">' +
-        '<div class="sb-kd-badge"><div class="sb-kd-d">' + String(d.getDate()).padStart(2,'0') + '</div>' +
-        '<div class="sb-kd-mo">' + MONTHS[d.getMonth()] + '</div></div>' +
-        '<div class="sb-kd-lbl"><div class="sb-kd-t">' + esc(e.event) + '</div>' +
-        '<div class="sb-kd-s">' + sub + '</div></div></div>';
-    }).join('');
-  })
-  .catch(() => { /* leave section empty rather than show placeholders */ });
+// One shared school-calendar CSV; reporting deadlines stay in Academic.
+const academicCalendar=window.WCIB_SCHOOL_CALENDAR;
+let academicExpanded=false;
+const academicStore=academicCalendar.createStore('wcib_hub_key_dates_2026_27',renderAcademicDates);
+function renderAcademicDates(state){
+  const events=state.rows.filter(e=>e.start_date&&e.is_tbc!=='TRUE'&&
+      (e.end_date||e.start_date)>=academicCalendar.todayISO())
+    .filter(e=>!e.end_date||(Date.parse(e.end_date)-Date.parse(e.start_date))/86400000<=7)
+    .sort((a,b)=>a.start_date.localeCompare(b.start_date)||a.event_id.localeCompare(b.event_id));
+  const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const visible=academicExpanded?events:events.slice(0,5);
+  const cards=visible.map(e=>{
+    const parts=e.start_date.split('-');
+    const sub=academicCalendar.dates(e)+' · '+e.category+' · '+academicCalendar.details(e);
+    return '<div class="sb-kd-item" data-calendar-event="'+academicCalendar.esc(e.event_id)+'">'+
+      '<div class="sb-kd-badge"><div class="sb-kd-d">'+parts[2]+'</div>'+
+      '<div class="sb-kd-mo">'+months[Number(parts[1])-1]+'</div></div>'+
+      '<div class="sb-kd-lbl"><div class="sb-kd-t">'+academicCalendar.esc(e.event)+'</div>'+
+      '<div class="sb-kd-s">'+academicCalendar.esc(sub)+'</div></div></div>';
+  }).join('');
+  const controls='<div style="font-size:11px;display:flex;gap:12px;flex-wrap:wrap;padding:6px 0;">'+
+    (events.length>5?'<button type="button" id="sb-calendar-more" onclick="toggleAcademicDates()" style="font:inherit;color:inherit;background:none;border:0;padding:0;text-decoration:underline;cursor:pointer;">'+(academicExpanded?'Show less':'Show more')+'</button>':'')+
+    '<a href="https://wcibmaths.github.io/sow/#calendar" target="_blank" rel="noopener noreferrer" style="color:inherit;">View full calendar</a></div>';
+  document.getElementById('sb-kd-academic').innerHTML=cards+
+    academicCalendar.notice(state,'refreshAcademicCalendar()')+controls;
+}
+function toggleAcademicDates(){academicExpanded=!academicExpanded;renderAcademicDates(academicStore.state);}
+function refreshAcademicCalendar(){return academicStore.refresh();}
+refreshAcademicCalendar();
 
 // Upcoming Pearson external exams — use the SOW's canonical exam-dates.js data.
 const examSource = typeof EXTERNAL_EXAMS === 'undefined' ? [] : EXTERNAL_EXAMS;
