@@ -787,6 +787,7 @@ a { text-decoration: none; color: inherit; }
     padding:20px;margin-bottom:16px;}
 .card-title{font-size:11px;font-weight:700;color:var(--dark-gray);
     text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px;}
+.hod-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;align-items:stretch;}
 .hod-row.insights-row{grid-template-columns:minmax(0,3fr) minmax(0,2fr);}
 .hod-card-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;}
 .hod-card-head .card-title{margin-bottom:0;display:flex;align-items:center;gap:7px;}
@@ -794,12 +795,15 @@ a { text-decoration: none; color: inherit; }
 .hod-card-link{border:none;background:transparent;color:var(--blue-d);font:inherit;
     font-size:11px;font-weight:600;cursor:pointer;padding:0;white-space:nowrap;}
 .hod-card-link:hover{text-decoration:underline;}
+.type-pill{display:inline-block;font-size:10.5px;font-weight:700;padding:2px 9px;
+    border-radius:999px;letter-spacing:0.02em;white-space:nowrap;}
 .tp-assessment{background:var(--blush-bg);color:var(--blush-d);}
 .tp-mock{background:var(--blue-bg);color:var(--blue-d);}
 .tp-holiday{background:var(--mint-bg);color:var(--mint-d);}
 .tp-deadline{background:#F4E7D6;color:#B07D3E;}
 .tp-note{background:var(--lavender-bg);color:var(--lavender-d);}
 .tp-exam{background:var(--blush-bg);color:var(--blush-d);}
+.dash-date-groups{display:flex;flex-direction:column;gap:9px;max-height:350px;overflow-y:auto;padding-right:3px;}
 .dash-date-group{display:grid;grid-template-columns:56px minmax(0,1fr);gap:8px;padding-bottom:8px;border-bottom:1px solid var(--mid-gray);}
 .dash-date-group:last-child{border-bottom:0;padding-bottom:0;}
 .dash-date-label{font-size:11px;font-weight:800;line-height:1.2;color:var(--navy);text-transform:uppercase;letter-spacing:.03em;padding-top:2px;}
@@ -826,6 +830,8 @@ a { text-decoration: none; color: inherit; }
 .dash-event-list li{grid-template-columns:10px minmax(0,1fr) 40px;}
 .dash-event-action{width:40px;height:40px;}
 }
+.hod-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;
+    flex-wrap:wrap;margin-top:6px;padding:10px 4px 0;font-size:11.5px;color:var(--dark-gray);}
 .hod-footer .hf-refresh{display:inline-flex;align-items:center;gap:6px;}
 @media(max-width:1000px){
 .hod-row,.hod-row.insights-row{grid-template-columns:1fr;}
@@ -845,6 +851,8 @@ a { text-decoration: none; color: inherit; }
     color:var(--dark-gray);font-family:var(--font);transition:all 0.15s;}
 .assess-tog-btn:hover{border-color:var(--amber);color:var(--dark-amber);}
 .assess-tog-btn.active{background:var(--amber);border-color:var(--amber);color:var(--navy);}
+.cal-upcoming{background:#FBF8F4;border:1px solid #E2DDD7;border-radius:10px;
+    padding:14px 16px;margin-bottom:20px;}
 .cal-upcoming-head{display:flex;align-items:baseline;justify-content:space-between;
     gap:10px;flex-wrap:wrap;margin-bottom:10px;}
 .cal-upcoming-head h3{margin:0;font-size:14px;font-weight:700;color:var(--navy);}
@@ -895,9 +903,8 @@ a { text-decoration: none; color: inherit; }
 }
 .sow-port .card{margin-bottom:0;}
 .sow-port .hod-row{margin-bottom:0;}
-.sow-port .dash-date-groups{max-height:276px;}
 
-#home-insights{display:flex;flex-direction:column;gap:14px;}
+#home-insights, #home-exams{display:flex;flex-direction:column;gap:14px;}
 .hod-card-link{text-decoration:none;}
 
 /* Upcoming Exams folds to one line when no paper is close */
@@ -931,8 +938,9 @@ a { text-decoration: none; color: inherit; }
   color:var(--on-dark-dim);font-weight:600;margin-bottom:3px;}
 
 /* ── Sidebar: page links ── */
-.sb-pages{display:flex;flex-direction:column;gap:2px;padding:10px;
+.sb-pages{display:flex;flex-direction:column;align-content:flex-start;gap:2px;padding:10px;flex:1;
   border-bottom:1px solid var(--on-dark-line);}
+.sb-page{align-self:stretch;flex:0 0 auto;}
 .sb-page{display:flex;align-items:center;gap:8px;padding:7px 9px;border-radius:7px;
   font-size:12px;color:var(--on-dark-muted);text-decoration:none;}
 .sb-page:hover{background:rgba(255,255,255,.08);color:var(--on-dark);}

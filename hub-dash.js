@@ -52,11 +52,17 @@ function windowEventName(name) {
   while (out !== prev) { prev = out; out = out.replace(WINDOW_SUFFIX_RX, '').trim(); }
   return out;
 }
-function cleanEventDetails(details) {
+/* The audience is shown on its own line, so drop it from the details to stop
+   rows reading "Year 11 · Year 11 · M9A". */
+function cleanEventDetails(details, audience) {
+  var drop = String(audience || '').trim().toLowerCase();
   return String(details || '')
     .split(/\s*·\s*/)
     .filter(function (part) {
-      return !/^aggregated from \d+ consecutive daily entries\.?$/i.test(part.trim());
+      var p = part.trim();
+      if (!p) return false;
+      if (drop && p.toLowerCase() === drop) return false;
+      return !/^aggregated from \d+ consecutive daily entries\.?$/i.test(p);
     })
     .join(' · ');
 }
@@ -214,7 +220,7 @@ function calendarRows() {
           start: start, end: end, event: name, term: e.term, category: e.category,
           event_type: e.event_type, eventId: e.event_id,
           audience: SCHOOL_CALENDAR.audience(e),
-          details: cleanEventDetails(SCHOOL_CALENDAR.details(e))
+          details: cleanEventDetails(SCHOOL_CALENDAR.details(e), SCHOOL_CALENDAR.audience(e))
         };
         index[k] = r; merged.push(r);
       };
@@ -224,7 +230,7 @@ function calendarRows() {
       if ((start - row.end) / 86400000 > 4) { fresh(key + '|' + e.event_id); return; }
       if (start < row.start) row.start = start;
       if (end > row.end) row.end = end;
-      if (!row.details) row.details = cleanEventDetails(SCHOOL_CALENDAR.details(e));
+      if (!row.details) row.details = cleanEventDetails(SCHOOL_CALENDAR.details(e), SCHOOL_CALENDAR.audience(e));
     });
   return merged.sort(function (a, b) {
     return (a.start - b.start) || a.event.localeCompare(b.event);
@@ -348,20 +354,25 @@ function card(icon, title, link, body) {
   '</div>';
 }
 
-function renderHome() {
+function renderSevenDays() {
   var host = document.getElementById('home-insights');
   if (!host) return;
   var today = parseIsoDate(todayISO()) || new Date();
-
   var eventsHtml = SCHOOL_CALENDAR.notice(store.state, 'WCIB_HUB.reload()') +
     renderGroupedDates(events7(today), 'No school events or assessments in the next 7 days.');
+  host.innerHTML = card(ICN_CAL, 'Next 7 Days',
+    '<a class="hod-card-link" href="./calendar.html">View full calendar →</a>', eventsHtml);
+}
+
+function renderExams() {
+  var host = document.getElementById('home-exams');
+  if (!host) return;
+  var today = parseIsoDate(todayISO()) || new Date();
 
   var exams = relevantExams();
   var nextExam = exams.filter(function (e) { return e.d >= today; })[0] || null;
   var daysAway = nextExam ? Math.round((nextExam.d - today) / 86400000) : null;
   var near = examsForced || (daysAway !== null && daysAway <= EXAM_NEAR_DAYS);
-
-  var calLink = '<a class="hod-card-link" href="./calendar.html">View full calendar →</a>';
 
   if (!near) {
     var when = nextExam
@@ -376,9 +387,9 @@ function renderHome() {
           '<button type="button" class="xq-act" id="xq-show">Show exam timetable</button>' +
         '</div>'
       : '';
-    host.innerHTML = card(ICN_CAL, 'Next 7 Days', calLink, eventsHtml) + strip;
+    host.innerHTML = strip;
     var show = document.getElementById('xq-show');
-    if (show) show.addEventListener('click', function () { examsForced = true; renderHome(); });
+    if (show) show.addEventListener('click', function () { examsForced = true; renderExams(); });
     return;
   }
 
@@ -407,15 +418,12 @@ function renderHome() {
     'No relevant Edexcel Maths or Further Maths exams are scheduled for this series.');
   var pearsonLink = '<a class="hod-card-link" href="https://qualifications.pearson.com/en/support/support-topics/exams/exam-timetables.html#tab-Internationalcentres" target="_blank" rel="noopener noreferrer">View Pearson timetable →</a>';
 
-  host.innerHTML = '<div class="hod-row insights-row">' +
-    card(ICN_CAL, 'Next 7 Days', calLink, eventsHtml) +
-    card(ICN_CAP, 'Upcoming Exams', pearsonLink, extHtml) +
-  '</div>';
+  host.innerHTML = card(ICN_CAP, 'Upcoming Exams', pearsonLink, extHtml);
 
   host.querySelectorAll('.assess-tog-btn').forEach(function (btn) {
     btn.addEventListener('click', function () {
       selectedSeriesId = btn.getAttribute('data-series');
-      renderHome();
+      renderExams();
     });
   });
 }
@@ -492,34 +500,10 @@ function renderNow() {
   }
 }
 
-function renderLater() {
-  var host = document.getElementById('sb-kd-later');
-  if (!host) return;
-  var today = parseIsoDate(todayISO());
-  if (!today) return;
-  var after = new Date(today); after.setDate(after.getDate() + 7);
-  var later = calendarRows().filter(function (r) {
-    return r.start > after && (r.end - r.start) / 86400000 <= 21;
-  }).slice(0, 5);
-  host.innerHTML = later.map(function (r) {
-    return '<div class="sb-kd-item">' +
-      '<div class="sb-kd-badge">' +
-        '<div class="sb-kd-d">' + String(r.start.getDate()).padStart(2, '0') + '</div>' +
-        '<div class="sb-kd-mo">' + MONTHS[r.start.getMonth()] + '</div>' +
-      '</div>' +
-      '<div class="sb-kd-lbl">' +
-        '<div class="sb-kd-t">' + esc(r.event) + '</div>' +
-        '<div class="sb-kd-s">' + esc(r.category || '') + ' · ' + esc(r.audience) + '</div>' +
-      '</div>' +
-    '</div>';
-  }).join('') || '<div class="sb-kd-note">Nothing further scheduled this term.</div>';
-}
-
 /* ── Data ─────────────────────────────────────────────────────────── */
 function renderAll() {
   renderNow();
-  renderLater();
-  if (PAGE === 'calendar') renderCalendar(); else renderHome();
+  if (PAGE === 'calendar') { renderCalendar(); } else { renderSevenDays(); renderExams(); }
 }
 
 var store = SCHOOL_CALENDAR.createStore('wcib_hub_key_dates_2026_27', function (state) {
