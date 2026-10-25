@@ -2,800 +2,16 @@
 <html lang="en">
 <head>
 <script src="./wcib-gate.js" data-subtitle="Department Hub"></script>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
 <title>WCIB Maths Department Hub</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  /* page surfaces */
-  --bg:         #F4EFE7;
-  --surface:    #FFFFFF;
-  --panel-soft: #FBF8F4;
-  --stone-bg:   #FBF8F4;
-  --border:     #E2DDD7;
-  --border-2:   #EFEAE2;
-
-  /* text */
-  --text:       #2F3640;
-  --mid:        #4F5762;
-  --muted:      #6C7480;
-
-  /* nav / dark anchor */
-  --sidebar-bg:     #3E4655;
-  --sidebar-active: #5E5670;
-  --accent:         #DBA39D;
-  --on-dark:        #FFFFFF;
-  --on-dark-muted:  rgba(255,255,255,.85);
-  --on-dark-dim:    rgba(255,255,255,.62);
-  --on-dark-line:   rgba(255,255,255,.16);
-  --navy:           #3E4655;
-  --navy-2:         #2F3641;
-  --navy-3:         #5E5670;
-
-  /* pastel accent families */
-  --mint:    #C9E4D4;
-  --mint-bg: #E2F1E8;
-  --mint-d:  #5A9B7F;
-
-  --blue:    #A8BFD1;
-  --blue-bg: #D9E4ED;
-  --blue-d:  #3D5872;
-
-  --blush:    #DBA39D;
-  --blush-bg: #F0DDD9;
-  --blush-d:  #B47267;
-
-  --lav:    #B39EB5;
-  --lav-bg: #E3DBE5;
-  --lav-d:  #8A7194;
-
-  /* legacy aliases (so existing component rules keep working) */
-  --teal:      var(--mint);
-  --teal-d:    var(--mint-d);
-  --teal-bg:   var(--mint-bg);
-  --teal-mid:  #C5CCB5;
-  --green:     var(--mint);
-  --green-bg:  var(--mint-bg);
-  --orange:    var(--blush);
-  --orange-d:  var(--blush-d);
-  --orange-bg: var(--blush-bg);
-  --clay:      var(--blush);
-  --clay-bg:   var(--blush-bg);
-  --amber:     var(--lav);
-  --amber-bg:  var(--lav-bg);
-  --f: 'Poppins', system-ui, sans-serif;
-  --r: 12px;
-  --r-sm: 8px;
-}
-
-html { font-size: 13.5px; }
-body {
-  font-family: var(--f);
-  background: var(--bg);
-  color: var(--text);
-  min-height: 100vh;
-  display: flex;
-  -webkit-font-smoothing: antialiased;
-}
-a { text-decoration: none; color: inherit; }
-
-/* ══════════════════════════════════
-   SIDEBAR
-══════════════════════════════════ */
-.sidebar {
-  width: 210px;
-  min-height: 100vh;
-  background: var(--sidebar-bg);
-  color: var(--on-dark);
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  overflow-y: auto;
-}
-
-.sb-top {
-  padding: 24px 20px 20px;
-  border-bottom: 1px solid var(--on-dark-line);
-}
-
-.sb-brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 4px;
-}
-
-.sb-logo {
-  width: 36px; height: 36px;
-  border-radius: 9px;
-  background: var(--accent);
-  color: var(--on-dark);
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-  overflow: hidden;
-}
-
-.sb-name {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--on-dark);
-  line-height: 1.25;
-  letter-spacing: .01em;
-}
-
-.sb-sub {
-  font-size: 10.5px;
-  color: var(--on-dark-muted);
-  letter-spacing: .02em;
-  padding-left: 2px;
-  margin-top: 2px;
-}
-
-/* term badge */
-.sb-term {
-  margin-top: 14px;
-  background: rgba(255,255,255,.10);
-  border: 1px solid var(--on-dark-line);
-  border-radius: 7px;
-  padding: 8px 12px;
-}
-.sb-term-label {
-  font-size: 9.5px;
-  font-weight: 600;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 2px;
-}
-.sb-term-val {
-  font-size: 11.5px;
-  font-weight: 500;
-  color: var(--on-dark);
-}
-
-/* nav */
-.sb-nav {
-  padding: 16px 12px;
-  flex: 1;
-}
-
-.sb-section-label {
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: .13em;
-  text-transform: uppercase;
-  color: var(--on-dark-dim);
-  padding: 0 8px;
-  margin: 10px 0 6px;
-}
-.sb-section-label:first-child { margin-top: 0; }
-
-/* sidebar key dates */
-.sb-kd-head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  padding-right: 8px;
-}
-.sb-kd-term {
-  font-size: 9px;
-  font-weight: 600;
-  color: var(--accent);
-  letter-spacing: .04em;
-}
-.sb-kd {
-  margin: 4px 4px 0;
-  background: rgba(255,255,255,.07);
-  border: 1px solid var(--on-dark-line);
-  border-radius: 8px;
-  padding: 10px 10px 9px;
-}
-.sb-kd-group {
-  font-size: 8.5px;
-  font-weight: 600;
-  letter-spacing: .11em;
-  text-transform: uppercase;
-  color: var(--on-dark-dim);
-  margin: 0 0 5px;
-}
-.sb-kd-group-gap { margin-top: 12px; }
-.sb-kd-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 3px 0;
-}
-.sb-kd-badge {
-  width: 30px;
-  flex-shrink: 0;
-  text-align: center;
-  background: rgba(219,163,157,.18);
-  border-radius: 6px;
-  padding: 3px 0 4px;
-}
-.sb-kd-d { font-size: 11px; font-weight: 700; color: var(--accent); line-height: 1.1; }
-.sb-kd-mo {
-  font-size: 7.5px;
-  font-weight: 600;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--on-dark-muted);
-}
-.sb-kd-lbl { min-width: 0; }
-.sb-kd-t {
-  font-size: 10.5px;
-  font-weight: 600;
-  color: var(--on-dark);
-  line-height: 1.25;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.sb-kd-s {
-  font-size: 9px;
-  color: var(--on-dark-muted);
-  margin-top: 1px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.sb-kd-note {
-  font-size: 10px;
-  color: var(--on-dark-dim, rgba(255,255,255,.55));
-  line-height: 1.5;
-  margin: 2px 0 6px;
-}
-.sb-kd-link {
-  display: block;
-  margin-top: 9px;
-  font-size: 9.5px;
-  font-weight: 600;
-  color: var(--accent);
-}
-.sb-kd-link:hover { text-decoration: underline; }
-
-
-.sb-bottom {
-  padding: 14px 20px;
-  border-top: 1px solid var(--on-dark-line);
-}
-.sb-date {
-  font-size: 10.5px;
-  color: var(--on-dark-muted);
-  line-height: 1.5;
-}
-
-/* ══════════════════════════════════
-   MAIN WRAPPER
-══════════════════════════════════ */
-.wrapper {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-}
-
-/* topbar */
-.topbar {
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  padding: 0 28px;
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.tb-greeting {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--text);
-}
-
-.tb-sub {
-  font-size: 11.5px;
-  color: var(--muted);
-  margin-top: 1px;
-}
-
-.tb-right {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.tb-btn {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-size: 12.5px;
-  font-weight: 600;
-  font-family: var(--f);
-  cursor: pointer;
-  border: none;
-  transition: all .15s;
-}
-
-.tb-btn-primary {
-  background: var(--navy);
-  color: var(--on-dark);
-}
-.tb-btn-primary:hover { background: var(--navy-2); }
-
-.tb-btn-ghost {
-  background: var(--border-2);
-  color: var(--mid);
-}
-.tb-btn-ghost:hover { background: var(--border); }
-
-/* ══════════════════════════════════
-   BODY GRID
-══════════════════════════════════ */
-.body {
-  flex: 1;
-  display: grid;
-  grid-template-columns: 1fr 272px;
-  gap: 20px;
-  padding: 22px 28px 60px 22px;
-  align-items: start;
-}
-
-.main { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
-.right { display: flex; flex-direction: column; gap: 16px; }
-
-/* ══════════════════════════════════
-   FEATURED CARDS ROW
-══════════════════════════════════ */
-
-/* Quick Access compact row */
-.qa-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-.qa-card {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
-  border-radius: var(--r);
-  border: 1px solid var(--border);
-  transition: transform .18s, border-color .18s;
-}
-.qa-card:hover { transform: translateY(-2px); border-color: var(--teal); }
-.qa-mint { background: var(--mint-bg); color: var(--mint-d); }
-.qa-blue { background: var(--blue-bg); color: var(--blue-d); }
-.qa-icon { line-height: 0; flex-shrink: 0; }
-.qa-text { min-width: 0; flex: 1; }
-.qa-title { font-size: 12.5px; font-weight: 600; color: var(--text); }
-.qa-meta { font-size: 10px; color: var(--mid); margin-top: 1px; }
-.qa-arrow { color: var(--muted); font-size: 13px; transition: color .15s; }
-.qa-card:hover .qa-arrow { color: var(--text); }
-
-
-
-/* ══════════════════════════════════
-   SECTION HEADER
-══════════════════════════════════ */
-.sec-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 12px;
-}
-
-.sec-title {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.sec-sub {
-  font-size: 10.5px;
-  color: var(--muted);
-  font-weight: 400;
-}
-
-.sec-badge {
-  font-size: 10px;
-  font-weight: 500;
-  color: var(--muted);
-  background: var(--border-2);
-  padding: 2px 7px;
-  border-radius: 20px;
-}
-
-/* ══════════════════════════════════
-   TEACHING RESOURCES — 3 GROUPS
-══════════════════════════════════ */
-.teach-section {}
-
-.teach-tabs {
-  display: flex;
-  gap: 4px;
-  background: var(--border-2);
-  padding: 4px;
-  border-radius: 10px;
-  margin-bottom: 14px;
-  width: fit-content;
-}
-
-.teach-tab {
-  padding: 6px 14px;
-  border-radius: 7px;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--mid);
-  cursor: pointer;
-  transition: all .15s;
-  border: none;
-  background: none;
-  font-family: var(--f);
-}
-.teach-tab.active {
-  background: var(--surface);
-  color: var(--text);
-  box-shadow: 0 1px 4px rgba(0,0,0,.08);
-}
-
-.teach-panel { display: none; }
-.teach-panel.active { display: block; }
-
-.teach-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-}
-
-.tool-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--r-sm);
-  padding: 12px 14px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  transition: all .15s;
-  color: var(--text);
-}
-.tool-card:hover {
-  border-color: var(--teal);
-  background: var(--teal-bg);
-  transform: translateY(-1px);
-}
-
-.tool-dot {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-.td-teal   { background: var(--teal); }
-.td-orange { background: var(--orange); }
-.td-amber  { background: var(--amber); }
-.td-green  { background: var(--green); }
-.td-navy   { background: var(--navy); }
-.td-mid    { background: var(--muted); }
-
-.tool-name { font-size: 12.5px; font-weight: 400; flex: 1; }
-
-.tool-tag {
-  font-size: 9.5px;
-  font-weight: 600;
-  letter-spacing: .04em;
-  padding: 2px 6px;
-  border-radius: 4px;
-  flex-shrink: 0;
-}
-.tt-both   { color: var(--teal-d);   background: var(--teal-bg); }
-.tt-sheets { color: var(--orange-d); background: var(--amber-bg); }
-.tt-inter  { color: var(--navy);     background: var(--clay-bg); }
-
-/* ══════════════════════════════════
-   PLATFORMS GRID
-══════════════════════════════════ */
-.plat-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-}
-
-.plat-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--r-sm);
-  padding: 10px 12px;
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  cursor: pointer;
-  transition: all .15s;
-  color: var(--text);
-}
-.plat-card:hover { border-color: var(--border); background: var(--border-2); }
-
-.plat-dot {
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-.plat-name { font-size: 12px; font-weight: 400; }
-
-/* ══════════════════════════════════
-   RIGHT PANEL — ASSESSMENT TILES
-══════════════════════════════════ */
-.panel-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--r);
-  overflow: hidden;
-}
-
-.panel-head {
-  padding: 14px 16px 12px;
-  border-bottom: 1px solid var(--border-2);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.panel-title {
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--text);
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-
-.panel-sub {
-  font-size: 10px;
-  color: var(--muted);
-  font-weight: 400;
-}
-
-.assess-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  padding: 12px;
-}
-
-.a-tile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 7px;
-  padding: 13px 6px 11px;
-  border-radius: 9px;
-  border: 1.5px solid var(--border);
-  background: var(--bg);
-  cursor: pointer;
-  transition: all .18s;
-  text-align: center;
-}
-.a-tile:hover {
-  background: var(--teal-bg);
-  border-color: var(--teal);
-}
-.a-tile:hover .a-tile-lbl { color: var(--text); }
-.a-tile:hover .a-icon svg { stroke: var(--teal-d); }
-
-.a-icon { line-height: 0; }
-.a-tile-lbl {
-  font-size: 10px;
-  font-weight: 500;
-  color: var(--mid);
-  line-height: 1.3;
-}
-
-/* ══════════════════════════════════
-   RIGHT PANEL — TABS (DEPT + EXAM)
-══════════════════════════════════ */
-.tab-bar {
-  display: flex;
-  border-bottom: 1px solid var(--border-2);
-}
-
-.tab-btn {
-  flex: 1;
-  padding: 11px 8px;
-  font-size: 11.5px;
-  font-weight: 500;
-  font-family: var(--f);
-  color: var(--muted);
-  background: none;
-  border: none;
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -1px;
-  transition: color .15s, border-color .15s;
-}
-.tab-btn.active { color: var(--teal-d); border-bottom-color: var(--teal); }
-.tab-btn:hover:not(.active) { color: var(--mid); }
-
-.tab-content { display: none; }
-.tab-content.active { display: block; }
-
-/* link list */
-.llist { padding: 4px 0; }
-
-.ll-group {
-  font-size: 9.5px;
-  font-weight: 600;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--muted);
-  padding: 12px 16px 4px;
-}
-.ll-group + .ll-row { margin-top: 0; }
-
-.ll-row {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  padding: 8px 16px;
-  cursor: pointer;
-  transition: background .12s;
-  color: var(--text);
-}
-.ll-row:hover { background: var(--bg); }
-.ll-row:hover .ll-arrow { opacity: 1; transform: translateX(2px); }
-
-.ll-ico {
-  width: 24px; height: 24px;
-  border-radius: 6px;
-  background: var(--border-2);
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-}
-
-.ll-name {
-  flex: 1;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1.3;
-}
-
-.ll-arrow {
-  opacity: 0;
-  transition: opacity .12s, transform .12s;
-  color: var(--muted);
-  flex-shrink: 0;
-}
-
-/* ══════════════════════════════════
-   SCHEME OF WORK CARD (FULL WIDTH)
-══════════════════════════════════ */
-.sow-card {
-  background: var(--navy);
-  border-radius: var(--r);
-  padding: 22px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: box-shadow .18s;
-  color: inherit;
-}
-.sow-card:hover { box-shadow: 0 6px 22px rgba(47,54,64,.18); }
-
-.sow-card::before {
-  content: '';
-  position: absolute;
-  right: -60px; top: -60px;
-  width: 220px; height: 220px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(219,163,157,.30) 0%, transparent 65%);
-  pointer-events: none;
-}
-
-.sow-left {}
-.sow-eyebrow {
-  font-size: 9.5px;
-  font-weight: 600;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 5px;
-}
-.sow-title {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--on-dark);
-  line-height: 1.2;
-  margin-bottom: 6px;
-}
-.sow-desc {
-  font-size: 11.5px;
-  color: rgba(255,255,255,.65);
-  font-weight: 300;
-  max-width: 400px;
-  line-height: 1.5;
-}
-
-.sow-pills {
-  display: flex;
-  gap: 5px;
-  flex-wrap: wrap;
-  margin-top: 12px;
-}
-.sow-pill {
-  font-size: 10.5px;
-  font-weight: 500;
-  color: rgba(255,255,255,.7);
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.18);
-  padding: 3px 9px;
-  border-radius: 20px;
-}
-
-.sow-btn {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  background: var(--accent);
-  color: var(--on-dark);
-  font-family: var(--f);
-  font-size: 12.5px;
-  font-weight: 600;
-  padding: 11px 20px;
-  border-radius: 9px;
-  border: none;
-  cursor: pointer;
-  white-space: nowrap;
-  flex-shrink: 0;
-  transition: background .15s;
-}
-.sow-card:hover .sow-btn { background: var(--blush-d); }
-
-/* ══════════════════════════════════
-   ANIMATIONS
-══════════════════════════════════ */
-@keyframes up {
-  from { opacity: 0; transform: translateY(14px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.topbar   { animation: up .3s ease both; }
-.sow-card { animation: up .35s .05s ease both; }
-.main > *:nth-child(2) { animation: up .35s .08s ease both; }
-.main > *:nth-child(3) { animation: up .35s .11s ease both; }
-.main > *:nth-child(4) { animation: up .35s .14s ease both; }
-.right > * { animation: up .35s .07s ease both; }
-
-/* ══════════════════════════════════
-   RESPONSIVE
-══════════════════════════════════ */
-@media (max-width: 900px) {
-  .sidebar { width: 60px; }
-  .sb-name, .sb-sub, .sb-term, .sb-section-label, .sb-date, .sb-kd, .sb-kd-head { display: none; }
-  .body { grid-template-columns: 1fr; padding: 16px; }
-  .teach-grid { grid-template-columns: 1fr 1fr; }
-  .plat-grid { grid-template-columns: repeat(3, 1fr); }
-}
-</style>
+<link rel="stylesheet" href="./hub.css?v=2026-10-25">
 </head>
 <body>
-
 <!-- ── SIDEBAR ── -->
 <aside class="sidebar">
   <div class="sb-top">
@@ -806,30 +22,46 @@ a { text-decoration: none; color: inherit; }
       </div>
     </div>
     <div class="sb-sub">Department Hub</div>
-    <div class="sb-term">
-      <div class="sb-term-label" id="term-label">Term 1 2026/27</div>
-      <div class="sb-term-val" id="term-week">Starts soon</div>
+  </div>
+
+  <!-- Today, term, week, cycle -->
+  <div class="sb-now">
+    <div class="sb-now-day" id="now-dow">&nbsp;</div>
+    <div class="sb-now-date" id="now-date">&nbsp;</div>
+    <div class="sb-now-month" id="now-month">&nbsp;</div>
+    <div class="sb-now-rows">
+      <div class="sb-now-row"><span class="sb-now-k">Term</span><span class="sb-now-v" id="now-term">&mdash;</span></div>
+      <div class="sb-now-row"><span class="sb-now-k">Week</span><span class="sb-now-v" id="now-week">&mdash;</span></div>
+      <div class="sb-now-row"><span class="sb-now-k">Cycle</span><span class="sb-now-v"><span class="sb-now-cycle" id="now-cycle">&mdash;</span></span></div>
     </div>
+    <div class="sb-now-next" id="now-next"><b>Next up</b>&mdash;</div>
+  </div>
+
+  <div class="sb-pages">
+    <a class="sb-page active" href="./index.html" title="Department Home">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span class="sb-page-lbl">Department Home</span>
+    </a>
+    <a class="sb-page" href="./calendar.html" title="School Calendar">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <span class="sb-page-lbl">School Calendar</span>
+    </a>
   </div>
 
   <nav class="sb-nav">
     <div class="sb-kd-head">
-      <span class="sb-section-label">Key Dates</span>
-      <span class="sb-kd-term" id="kd-term">Term 1 2026/27</span>
+      <span class="sb-section-label">Later This Term</span>
+      <span class="sb-kd-term" id="kd-term">Term 1</span>
     </div>
     <div class="sb-kd">
-      <div class="sb-kd-group">Academic</div>
-      <div id="sb-kd-academic"></div>
-
-      <div class="sb-kd-group sb-kd-group-gap">Upcoming External Exams</div>
-      <div id="sb-kd-exams"></div>
-      <div class="sb-kd-note">External exam dates follow Pearson official timetables.</div>
-      <a class="sb-kd-link" href="https://qualifications.pearson.com/en/support/support-topics/exams/exam-timetables.html#tab-Internationalcentres" target="_blank">View Pearson Exam Timetables →</a>
+      <div id="sb-kd-later"></div>
+      <div class="sb-kd-note">Dates beyond the next 7 days. This week is shown on the Department Home page.</div>
+      <a class="sb-kd-link" href="./calendar.html">Open school calendar &rarr;</a>
     </div>
   </nav>
 
   <div class="sb-bottom">
-    <div class="sb-date" id="sb-date">—</div>
+    <div class="sb-date" id="sb-date">&mdash;</div>
   </div>
 </aside>
 
@@ -843,16 +75,23 @@ a { text-decoration: none; color: inherit; }
       <div class="tb-sub" id="tb-date"></div>
     </div>
     <div class="tb-right">
-      <a href="https://wcibmaths.github.io/student-hub/" target="_blank">
-        <button class="tb-btn tb-btn-ghost">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          Student Maths Hub
+      <a href="https://wcibmaths.github.io/sow/" target="_blank" rel="noopener noreferrer" title="Scheme of Work 2026/27">
+        <button class="tb-btn tb-btn-primary">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          <span class="tb-lbl">Scheme of Work</span>
         </button>
       </a>
-      <a href="https://trello.com/b/Gg4twjge/math-dept-tracker" target="_blank">
-        <button class="tb-btn tb-btn-primary">
+      <span class="tb-sep"></span>
+      <a href="https://wcibmaths.github.io/student-hub/" target="_blank" rel="noopener noreferrer" title="Student Maths Hub">
+        <button class="tb-btn tb-btn-ghost">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="tb-lbl">Student Hub</span>
+        </button>
+      </a>
+      <a href="https://trello.com/b/Gg4twjge/math-dept-tracker" target="_blank" rel="noopener noreferrer" title="Maths Dept Tracker">
+        <button class="tb-btn tb-btn-ghost">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><rect x="7" y="7" width="3" height="9" rx="1"/><rect x="14" y="7" width="3" height="5" rx="1"/></svg>
-          Trello Board
+          <span class="tb-lbl">Trello</span>
         </button>
       </a>
     </div>
@@ -862,24 +101,10 @@ a { text-decoration: none; color: inherit; }
   <div class="body">
     <div class="main">
 
-      <!-- SCHEME OF WORK FULL CARD -->
-      <a class="sow-card" href="https://wcibmaths.github.io/sow/" target="_blank">
-        <div class="sow-left">
-          <div class="sow-eyebrow">Live · 2026/27</div>
-          <div class="sow-title">WCIB Maths — Scheme of Work</div>
-          <div class="sow-desc">Track lesson progress, view assessment schedules, and browse the school calendar by year group and class set.</div>
-          <div class="sow-pills">
-            <span class="sow-pill">Year 7</span><span class="sow-pill">Year 8</span><span class="sow-pill">Year 9</span>
-            <span class="sow-pill">Year 10</span><span class="sow-pill">Year 11</span><span class="sow-pill">Year 12</span><span class="sow-pill">Year 13</span>
-          </div>
-        </div>
-        <button class="sow-btn">
-          Open SoW
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </button>
-      </a>
+      <!-- NEXT 7 DAYS + UPCOMING EXAMS (rendered by hub-dash.js) -->
+      <div class="sow-port" id="home-insights"></div>
 
-      <!-- QUICK ACCESS -->
+<!-- QUICK ACCESS -->
       <div class="qa-row">
         <a class="qa-card qa-mint" href="https://wcibth.sharepoint.com/sites/Mathematics/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=3uJxar&CID=3f3ed975%2D9341%2D4081%2Dba09%2D4a752fef3d9d&FolderCTID=0x012000D0CF7BB6916D3541A8EDC8E4D61F8DC0&id=%2Fsites%2FMathematics%2FShared%20Documents%2FMaths%20Team%20Hub%2F3%2E%20Assessment" target="_blank">
           <div class="qa-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
@@ -960,7 +185,7 @@ a { text-decoration: none; color: inherit; }
         </div>
       </div>
 
-    </div><!-- /main -->
+        </div><!-- /main -->
 
     <!-- RIGHT PANEL -->
     <div class="right">
@@ -1035,155 +260,29 @@ a { text-decoration: none; color: inherit; }
         </div>
       </div>
 
-    </div><!-- /right -->
+        </div><!-- /right -->
   </div><!-- /body -->
 </div><!-- /wrapper -->
 
-<!-- Use the same canonical Pearson timetable data as the Scheme of Work dashboard. -->
+<!-- The Pearson timetable is the Scheme of Work's file: one source for both sites. -->
 <script src="https://wcibmaths.github.io/sow/exam-dates.js?v=pearson-final-2026-11-r2"></script>
-<script src="./school-calendar.js?v=2026-10-14-r2"></script>
+<script src="./school-calendar.js?v=2026-10-25"></script>
+<script src="./hub-dash.js?v=2026-10-25"></script>
 <script>
-// Greeting
-const now = new Date();
-const hr = now.getHours();
-const greet = hr < 12 ? 'Good morning' : hr < 17 ? 'Good afternoon' : 'Good evening';
-document.getElementById('greeting').textContent = greet;
-
-const dateStr = now.toLocaleDateString('en-GB', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
-document.getElementById('tb-date').textContent = dateStr;
-document.getElementById('sb-date').textContent = dateStr;
-
-// ── CSV-driven term/week + academic key dates ──
-// Sources (GitHub Pages-safe relative paths):
-//   data/wcib_term_weeks_2026_27.csv
-//   data/wcib_academic_key_dates_2026_27.csv
-
-function parseCSV(text) {
-  if (text.charCodeAt(0) === 0xFEFF) text = text.slice(1);
-  const rows = [];
-  let row = [], field = '', inQ = false;
-  for (let i = 0; i < text.length; i++) {
-    const c = text[i];
-    if (inQ) {
-      if (c === '"') { if (text[i+1] === '"') { field += '"'; i++; } else inQ = false; }
-      else field += c;
-    } else if (c === '"') inQ = true;
-    else if (c === ',') { row.push(field); field = ''; }
-    else if (c === '\n' || c === '\r') {
-      if (c === '\r' && text[i+1] === '\n') i++;
-      row.push(field); field = '';
-      if (row.length > 1 || row[0] !== '') rows.push(row);
-      row = [];
-    } else field += c;
-  }
-  if (field !== '' || row.length) { row.push(field); rows.push(row); }
-  const head = rows.shift();
-  return rows.map(r => Object.fromEntries(head.map((h, i) => [h, r[i] || ''])));
-}
-
-const todayISO = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
-const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-
-// Term / week box
-fetch('data/wcib_term_weeks_2026_27.csv')
-  .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
-  .then(text => {
-    const weeks = parseCSV(text).filter(w => w.start_date);
-    // Week containing today (weekend after a week counts as that week until next starts)
-    let current = null, next = null;
-    for (const w of weeks) {
-      if (w.start_date <= todayISO && todayISO <= w.end_date) { current = w; break; }
-      if (w.start_date > todayISO) { next = next || w; }
-    }
-    if (!current) {
-      // weekend directly after a teaching week still counts as that week
-      const started = weeks.filter(w => w.start_date <= todayISO);
-      const last = started[started.length - 1];
-      if (last) {
-        const end = new Date(last.end_date + 'T00:00:00');
-        const gapDays = (new Date(todayISO + 'T00:00:00') - end) / 86400000;
-        if (gapDays <= 2) current = last;
-      }
-    }
-    if (current) {
-      const total = weeks.filter(w => w.term === current.term).length;
-      document.getElementById('term-label').textContent = current.term;
-      document.getElementById('term-week').textContent =
-        'Week ' + current.week_number + ' of ' + total + ' · ' + current.week_code + ' · Cycle ' + current.cycle;
-      const kt = document.getElementById('kd-term');
-      if (kt) kt.textContent = current.term;
-    } else if (next) {
-      const started = weeks.filter(w => w.start_date <= todayISO);
-      const last = started[started.length - 1];
-      const midTerm = last && last.term === next.term;
-      document.getElementById('term-label').textContent = next.term;
-      document.getElementById('term-week').textContent = midTerm ? 'Half-term break' : 'Starts soon';
-      const kt = document.getElementById('kd-term');
-      if (kt) kt.textContent = next.term;
-    }
-  })
-  .catch(() => { /* keep static fallback text */ });
-
-// One shared school-calendar CSV; reporting deadlines stay in Academic.
-const academicCalendar=window.WCIB_SCHOOL_CALENDAR;
-let academicExpanded=false;
-const academicStore=academicCalendar.createStore('wcib_hub_key_dates_2026_27',renderAcademicDates);
-function renderAcademicDates(state){
-  const events=state.rows.filter(e=>e.start_date&&e.is_tbc!=='TRUE'&&
-      (e.end_date||e.start_date)>=academicCalendar.todayISO())
-    .filter(e=>!e.end_date||(Date.parse(e.end_date)-Date.parse(e.start_date))/86400000<=7)
-    .sort((a,b)=>a.start_date.localeCompare(b.start_date)||a.event_id.localeCompare(b.event_id));
-  const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  const visible=academicExpanded?events:events.slice(0,5);
-  const cards=visible.map(e=>{
-    const parts=e.start_date.split('-');
-    const sub=academicCalendar.dates(e)+' · '+e.category+' · '+academicCalendar.details(e);
-    return '<div class="sb-kd-item" data-calendar-event="'+academicCalendar.esc(e.event_id)+'">'+
-      '<div class="sb-kd-badge"><div class="sb-kd-d">'+parts[2]+'</div>'+
-      '<div class="sb-kd-mo">'+months[Number(parts[1])-1]+'</div></div>'+
-      '<div class="sb-kd-lbl"><div class="sb-kd-t">'+academicCalendar.esc(e.event)+'</div>'+
-      '<div class="sb-kd-s">'+academicCalendar.esc(sub)+'</div></div></div>';
-  }).join('');
-  const controls='<div style="font-size:11px;display:flex;gap:12px;flex-wrap:wrap;padding:6px 0;">'+
-    (events.length>5?'<button type="button" id="sb-calendar-more" onclick="toggleAcademicDates()" style="font:inherit;color:inherit;background:none;border:0;padding:0;text-decoration:underline;cursor:pointer;">'+(academicExpanded?'Show less':'Show more')+'</button>':'')+
-    '<a href="https://wcibmaths.github.io/sow/#calendar" target="_blank" rel="noopener noreferrer" style="color:inherit;">View full calendar</a></div>';
-  document.getElementById('sb-kd-academic').innerHTML=cards+
-    academicCalendar.notice(state,'refreshAcademicCalendar()')+controls;
-}
-function toggleAcademicDates(){academicExpanded=!academicExpanded;renderAcademicDates(academicStore.state);}
-function refreshAcademicCalendar(){return academicStore.refresh();}
-refreshAcademicCalendar();
-
-// Upcoming Pearson external exams — use the SOW's canonical exam-dates.js data.
-const examSource = typeof EXTERNAL_EXAMS === 'undefined' ? [] : EXTERNAL_EXAMS;
-const futureMathsExams = examSource
-  .filter(e => e && e.date >= todayISO)
-  .filter(e => ['International GCSE', 'International A Level'].includes(e.qualification))
-  .filter(e => /mathematics|further/i.test(e.exam || ''))
-  .sort((a, b) => a.date.localeCompare(b.date) || String(a.code).localeCompare(String(b.code)))
-  .slice(0, 5);
-document.getElementById('sb-kd-exams').innerHTML = futureMathsExams.map(e => {
-  const d = new Date(e.date + 'T00:00:00');
-  const session = e.session ? ' · ' + esc(e.session) : '';
-  return '<div class="sb-kd-item">' +
-    '<div class="sb-kd-badge"><div class="sb-kd-d">' + String(d.getDate()).padStart(2,'0') + '</div>' +
-    '<div class="sb-kd-mo">' + ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][d.getMonth()] + '</div></div>' +
-    '<div class="sb-kd-lbl"><div class="sb-kd-t">' + esc(e.exam) + ' · ' + esc(e.code) + '</div>' +
-    '<div class="sb-kd-s">' + esc(e.paper) + ' · ' + esc(e.yg) + session + '</div></div></div>';
-}).join('');
+WCIB_HUB.start('home');
 
 // Teaching tabs
 function switchTab(btn, panelId) {
-  document.querySelectorAll('.teach-tab').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.teach-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.teach-tab').forEach(function (b) { b.classList.remove('active'); });
+  document.querySelectorAll('.teach-panel').forEach(function (p) { p.classList.remove('active'); });
   btn.classList.add('active');
   document.getElementById(panelId).classList.add('active');
 }
 
 // Resource tabs
 function switchResTab(btn, panelId) {
-  btn.closest('.panel-card').querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  btn.closest('.panel-card').querySelectorAll('.tab-content').forEach(p => p.classList.remove('active'));
+  btn.closest('.panel-card').querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
+  btn.closest('.panel-card').querySelectorAll('.tab-content').forEach(function (p) { p.classList.remove('active'); });
   btn.classList.add('active');
   document.getElementById(panelId).classList.add('active');
 }
